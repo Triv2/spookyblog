@@ -4,6 +4,7 @@ import Link from "next/link";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { Poppins } from "next/font/google"
+import Image from "next/image";
 
 
 const headingFont=localFont({
@@ -27,31 +28,32 @@ const textFont =  Poppins({
 
 const MarketingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col">
-      <div className={cn("flex items-center justify-center flex-col",headingFont.className,)}>
-        <div className="mb-4 flex items-center border shadow-sm p-4 bg-amber-100 text-amber-700 rounded-full uppercase">
-        <Medal className="h-6 w-6 mr-2"/>
-        No 1 task management
-        </div>
-        <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
-          Taskify helps teams move
-        </h1>
-        <div className="text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md pb-4 w-fit">
-          work forward.
-        </div>
-      </div>
-      <div className={cn(
-        "text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
+    <div className="flex items-center justify-center flex-col  h-auto">
+      <div className="flex items-center justify-center flex-col h-auto">
+        <div className="flex items-center justify-center md:flex-row flex-col p-2">
+          <Image src="/herologobg.webp" alt="logo" width={450} height={450}/>
+
+          <div className="flex flex-col items-center justify-center">
+            <h1 className={cn("text-4xl md:text-7xl text-center text-neutral-800 mb-6",headingFont.className,)}>Master Blog</h1>
+            <h1 className="text-xl md:text-3xl text-center font-semibold text-neutral-800 mb-6">
+              Find the best content and resources for your research.
+            </h1>
+            <div className={cn(
+        "text-sm md:text-xl text-black mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
         textFont.className
         )}>
-        Collaborate, manage projects, and reach new productivity peaks. From high rises to the home office, the way your team works is
-        unique - accomplish it all with Taskify.
+        Discover, research, share, collaborate, and understand. From the highest mountain to the lowest valley, learn everything you can with the Masterblog.
       </div>
-      <Button className="mt-6" size="lg" asChild>
-        <Link href="/">
-        Get Taskify for free
-        </Link>
-      </Button>
+            
+        <Button className="mt-6 bg-gradient-to-b from-fuchsia-600 to-purple-600 hover:scale-105 transition-all shadow-sm" size="lg" variant="secondary" asChild>
+            <Link href="/sign-up">
+            Join the MasterBlog  Now!
+            </Link>
+          </Button>
+          </div>
+        </div>
+      </div>
+
       
     </div>
   )
