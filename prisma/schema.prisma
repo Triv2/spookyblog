@@ -17,6 +17,7 @@ datasource db {
 model Profile {
   id            String @id @default(uuid())
   clerkId String
+  userName String
 }
 
 model Comment {
@@ -27,6 +28,7 @@ model Comment {
 model Author {
   id            String @id @default(uuid())
   clerkId String
+  userName String
 }
 
 model Category {

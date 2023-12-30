@@ -7,7 +7,7 @@ const MarketingLayout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="min-h-screen h-auto bg-white">
+    <div className="min-h-screen h-auto dark:bg-fuchsia-900/40">
       <Navbar/>
       <main className="pt-20 pb-20 ">
       {children}
