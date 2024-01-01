@@ -5,11 +5,11 @@ import Link from "next/link"
 
 export const Navbar = () => {
   return (
-    <div className="fixed top-0 w-full h-14 px-4 border-b shadow-sm bg-gradient-to-r from-fuchsia-600/40 to-purple-900/80 flex items-center">
+    <div className="fixed top-0 w-full h-14 px-4 border-b shadow-sm bg-gradient-to-l from-fuchsia-600 to-purple-900 flex items-center">
       <div className="md:max-w-screen-2xl mx-auto flex items-center w-full justify-between">
         <Logo/>
         <div className="space-x-4 md:blockm md:w-auto flex items-center justify-between w-full">
-          <ModeToggle/>
+          {/* <ModeToggle/> */}
           <Button size="sm" variant="outline" asChild>
             <Link href="/sign-in">
             Login

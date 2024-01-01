@@ -21,7 +21,9 @@ model Profile {
   authorId String?
   comments Comment[]
 
-  postIdsViewed String[]
+  articleIdsViewed String[]
+  articleIdsVoted String[]
+
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt
@@ -32,6 +34,12 @@ model Comment {
   clerkId String
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  articleId String
+  article Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+
+  content String
+
+
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt
@@ -42,7 +50,7 @@ model Author {
   clerkId String
   userName String
 
-  posts Post[]
+  articles Article[]
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt
@@ -67,18 +75,23 @@ model SubCategory {
 
   title String
   description String
-  posts Post[]
+  articles Article[]
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt
 }
 
-model Post {
+model Article {
   id            String @id @default(uuid())
   authorId String
   author Author @relation(fields: [authorId], references: [id], onDelete: Cascade)
   subCategoryId String
   subCategory SubCategory @relation(fields: [subCategoryId], references: [id], onDelete: Cascade)
+
+  comments Comment[]
+
+  upVotes Int?
+  downVotes Int?
 
 
   title String
