@@ -50,7 +50,7 @@ const LandingPage = () => {
             
         <Button className="mt-6 bg-gradient-to-b from-fuchsia-600 to-purple-600 hover:scale-105 text-white transition-all shadow-sm" size="lg" variant="secondary" asChild>
             <Link href="/sign-up">
-           <p className="text-lg"> Join the <span className={cn("text-emerald-300  text-xl",headingFont.className,)}>Paranormal</span> Now!</p>
+           <p className="md:text-lg"> Join the <span className={cn("text-emerald-300  text-xl",headingFont.className,)}>Paranormal</span> Now!</p>
             </Link>
           </Button>
           </div>
@@ -64,7 +64,7 @@ const LandingPage = () => {
                   <CategoryCard/>
                   <CategoryCard/>
                 </div>
-                <div className="flex flex-col items-center text-white md:w-[80%] w-full gap-1 px-5 pr-10">
+                <div className="flex flex-col items-center text-white md:w-[80%] w-full gap-1 md:px-5 md:pr-10">
                   
                   <ArticleCard/>
                   <ArticleCard/>
