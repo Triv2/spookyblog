@@ -30,21 +30,22 @@ const textFont =  Poppins({
 
 const LandingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col  h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full">
-      <div className="flex items-center justify-center flex-col h-auto ">
-        <div className="flex items-center justify-center md:flex-row flex-col p-2">
+    <div className="flex items-center justify-center flex-col  h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full pb-5">
+      <div className="flex items-center justify-center flex-col h-auto w-full">
+        <div className="flex items-center justify-start md:flex-row flex-col p-2 w-full">
+          <div className="lg:w-[30%]">
           <Image  src="/hero.png" alt="logo" width={350} height={350}/>
-
-          <div className="flex flex-col items-center justify-center">
+          </div>
+          <div className="flex flex-col items-center justify-center ">
             <h1 className={cn("text-4xl md:text-7xl text-center text-emerald-400   mb-6",headingFont.className,)}>Paranormal</h1>
             <h1 className="text-xl md:text-3xl text-center font-semibold text-neutral-800 dark:text-purple-200/80 mb-3">
-              Find the best content and resources for your research.
+              All things weird and creepy.
             </h1>
             <div className={cn(
         "text-sm md:text-xl text-black dark:text-white/80 mt-2 max-w-xs md:max-w-2xl text-center mx-auto",
         textFont.className
         )}>
-        Discover, research, share, collaborate, and understand everything you can with the Masterblog.
+        Discover, research, share, collaborate, and understand everything in the paranormal log.
       </div>
             
         <Button className="mt-6 bg-gradient-to-b from-fuchsia-600 to-purple-600 hover:scale-105 text-white transition-all shadow-sm" size="lg" variant="secondary" asChild>
@@ -55,16 +56,16 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-              <div className="flex  w-full h-auto px-5">
-                <div className="flex flex-col items-center justify-center w-[30%]">
-                  <h1 className="text-3xl font-bold text-white">Categories</h1>
+              <div className="flex md:flex-row flex-col w-full h-auto px-5 ">
+                <div className="flex md:flex-col flex-wrap px-10  md:w-[20%] gap-1">
+                  
                   <CategoryCard/>
                   <CategoryCard/>
                   <CategoryCard/>
                   <CategoryCard/>
                 </div>
-                <div className="flex flex-col items-center text-white w-full">
-                  <h1 className="font-bold md:text-lg lg:text-2xl">Recent Articles</h1>
+                <div className="flex flex-col items-center text-white md:w-[80%] w-full gap-1 px-5 pr-10">
+                  
                   <ArticleCard/>
                   <ArticleCard/>
                   <ArticleCard/>

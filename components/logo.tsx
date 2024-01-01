@@ -14,8 +14,8 @@ export const Logo = () => {
       <div className="hover:opacity-75 transition items-center gap-x-2 hidden md:flex">
         <Image src="/hero.png" alt="logo" width={30} height={30} />
       
-      <p className={cn("text-lg text-black dark:text-purple-200/90 pt-1 ",headingFont.className)}>
-        Master Blog</p>
+      <p className={cn("text-lg text-black dark:text-emerald-400/90 pt-1 ",headingFont.className)}>
+        Paranormal</p>
         </div>
     </Link>
   )
