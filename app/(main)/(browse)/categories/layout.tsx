@@ -1,7 +1,7 @@
-import { Footer } from "./_components/footer";
-import { Navbar } from "./_components/navbar";
+import { Footer } from "@/app/(landing)/_components/footer";
+import { Navbar } from "@/app/(landing)/_components/navbar";
 
-const LandingLayout = ({
+const BrowseLayout = ({
   children
 }:{
   children: React.ReactNode;
@@ -16,4 +16,4 @@ const LandingLayout = ({
     </div>
   )
 }
-export default LandingLayout;
+export default BrowseLayout;

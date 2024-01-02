@@ -10,7 +10,7 @@ const AuthorAbout = ({
   author,
 }:AuthorAboutProps) => {
   return (
-<div className="flex items-center gap-5">
+<div className="flex items-center">
           
           <Link className="flex items-center justify-center gap-2 " href="/">
          {/* {author && author.imageUrl &&( 
@@ -22,8 +22,8 @@ const AuthorAbout = ({
          )} */}
          <AuthorAvatar name="Eru" imageUrl="/avatarf1.png" className="shadow-md shadow-emerald-500"/>
           <div>
-          <p className="text-lg font-bold">Eru</p>
-          <p className="text-md text-muted-foreground">Lead Paranormal Investigator</p>
+          <p className="text-md md:text-lg font-bold">Eru</p>
+          <p className="text-sm md:text-md text-muted-foreground">Lead Paranormal Researcher</p>
           </div>
         </Link>
        </div>

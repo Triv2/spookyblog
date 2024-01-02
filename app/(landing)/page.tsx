@@ -33,14 +33,15 @@ const textFont =  Poppins({
 
 const LandingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col  h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full pb-5">
+    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full pb-5">
       <Particles className="fixed inset-0 z-10 " />
-      <Particles className="fixed inset-0 z-10 " />
+      
       <div className="flex items-center justify-center flex-col h-auto w-full">
       
         <div className="flex items-center justify-start md:flex-row flex-col p-2 w-full">
           <div className="lg:w-[30%]">
           <Image  src="/hero.png" alt="logo" width={350} height={350}/>
+          
           </div>
           <div className="flex flex-col items-center justify-center ">
             <h1 className={cn("text-4xl md:text-7xl text-center text-emerald-400   mb-6",headingFont.className,)}>Paranormal</h1>
@@ -51,7 +52,7 @@ const LandingPage = () => {
         "text-sm md:text-xl text-black dark:text-white/80 mt-2 max-w-xs md:max-w-2xl text-center mx-auto",
         textFont.className
         )}>
-        Discover, research, share, collaborate, and understand everything in the paranormal log.
+        Discover, research, share, collaborate, and understand everything paranormal.
       </div>
             
         <Button className="mt-6 bg-gradient-to-b from-fuchsia-600 to-purple-600 hover:scale-105 text-white transition-all shadow-sm" size="lg" variant="secondary" asChild>
@@ -64,7 +65,7 @@ const LandingPage = () => {
       </div>
               <div className="flex md:flex-row flex-col w-full h-auto px-5 ">
               <Particles className="fixed inset-0 z-10 " />
-                <div className=" px-10  md:w-[20%] gap-1">
+                <div className=" md:w-[20%] gap-1">
                   
                   <CategoryList/>
                 </div>

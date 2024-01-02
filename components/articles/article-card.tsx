@@ -27,19 +27,23 @@ const ArticleCard = ({
     <Card className="bg-slate-900/80 w-full z-30 cursor-none">
       
       <CardHeader>
-        <div className="flex justify-between items-center">
-        <CardTitle className="font-bold md:text-2xl lg:text-4xl text-white">
+        
+        <CardTitle className="font-bold  text-2xl lg:text-4xl text-white">
           Article One Title
           </CardTitle>
-          <div className="">
-          <AuthorAbout/>
-          </div>
-          </div>
+          
+          
+          
+         
+          <div className="flex sm:flex-row flex-col sm:justify-between md:items-center">
+            <div>
           <p className="pl-2">Category {'>'} Subcategory</p>
           <CardDescription className="pl-3 flex flex-col">
                 {new Date().toUTCString()}
           </CardDescription>
-       
+          </div>
+          <AuthorAbout/>
+          </div>
        
       </CardHeader>
       <CardContent className="text-sm md:text-xl text-white/70 flex md:flex-row flex-col gap-5">
@@ -56,12 +60,11 @@ const ArticleCard = ({
       </CardContent>
       <CardFooter className="flex justify-between items-center gap-2">
         
-        <div className="flex md:flex-row flex-col gap-1 items-center">
-        <Link className="text-blue-600 hover:scale-105 hover:text-blue-500 font-bold flex items-center justify-center gap-1 hover:underline bg-slate-800/80 p-2 rounded-md" href="/">
+        <Link className="z-30 text-blue-600 hover:scale-105 hover:text-blue-500 font-bold flex items-center justify-center gap-1 hover:underline bg-slate-800/80 p-2 rounded-md" href="/">
           Read More <ArrowRight className="h-4 w-4"/>
         </Link>
           <p className="text-muted-foreground">Comments (0)</p>
-        </div>
+        
         
         
       </CardFooter>
