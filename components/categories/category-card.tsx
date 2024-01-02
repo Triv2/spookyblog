@@ -13,14 +13,14 @@ interface CategoryCardProps {}
 
 const CategoryCard = () => {
   return (
-    <Card className="bg-slate-900/20 ">
+    <Card className="bg-slate-900/20 p-0">
       <CardHeader>
         <CardTitle className="font-bold text-white text-lg">
         <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
           Category One
           </Link>
           </CardTitle>
-        <CardDescription className="text-sm md:text-md text-white/70 md:flex justify-between flex-col hidden items-center">
+        <CardDescription className="text-sm md:text-md text-white/70  justify-between flex-col hidden items-center">
           
           <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
           SubCategoryOne

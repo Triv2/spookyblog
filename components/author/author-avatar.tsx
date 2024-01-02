@@ -1,13 +1,21 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-interface AuthorAvatarProps {}
+interface AuthorAvatarProps {
+  imageUrl?:string;
+  name?:string;
+  className?:string;
+}
 
-const AuthorAvatar = () => {
+const AuthorAvatar = ({
+  imageUrl,
+  name,
+  className,
+}: AuthorAvatarProps) => {
   return (
 
-<Avatar className="shadow-md shadow-emerald-600">
-  <AvatarImage src="/avatarf1.png"  />
-  <AvatarFallback>Eru</AvatarFallback>
+<Avatar className={className}>
+  <AvatarImage src={imageUrl} />
+  <AvatarFallback>{name}</AvatarFallback>
 </Avatar>
 
   );

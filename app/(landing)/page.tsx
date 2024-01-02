@@ -7,6 +7,9 @@ import { Poppins } from "next/font/google"
 import Image from "next/image";
 import CategoryCard from "@/components/categories/category-card";
 import ArticleCard from "@/components/articles/article-card";
+import Particles from "@/components/effects/particles";
+import Box from "@/components/box";
+import CategoryList from "@/components/categories/category-list";
 
 
 const headingFont=localFont({
@@ -31,7 +34,10 @@ const textFont =  Poppins({
 const LandingPage = () => {
   return (
     <div className="flex items-center justify-center flex-col  h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full pb-5">
+      <Particles className="fixed inset-0 z-10 " />
+      <Particles className="fixed inset-0 z-10 " />
       <div className="flex items-center justify-center flex-col h-auto w-full">
+      
         <div className="flex items-center justify-start md:flex-row flex-col p-2 w-full">
           <div className="lg:w-[30%]">
           <Image  src="/hero.png" alt="logo" width={350} height={350}/>
@@ -57,15 +63,13 @@ const LandingPage = () => {
         </div>
       </div>
               <div className="flex md:flex-row flex-col w-full h-auto px-5 ">
-                <div className="flex md:flex-col flex-wrap px-10  md:w-[20%] gap-1">
+              <Particles className="fixed inset-0 z-10 " />
+                <div className=" px-10  md:w-[20%] gap-1">
                   
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/>
+                  <CategoryList/>
                 </div>
                 <div className="flex flex-col items-center text-white md:w-[80%] w-full gap-1 md:px-5 md:pr-10">
-                  
+                
                   <ArticleCard/>
                   <ArticleCard/>
                   <ArticleCard/>

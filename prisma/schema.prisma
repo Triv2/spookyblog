@@ -16,9 +16,13 @@ datasource db {
 
 model Profile {
   id            String @id @default(uuid())
+  imageUrl String?
   clerkId String
   userName String
-  authorId String?
+
+  rank Rank?
+  author Author?
+
   comments Comment[]
 
   articleIdsViewed String[]
@@ -47,8 +51,11 @@ model Comment {
 
 model Author {
   id            String @id @default(uuid())
+  imageUrl String?
   clerkId String
   userName String
+  profileId String @unique
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
   articles Article[]
 
@@ -101,4 +108,15 @@ model Article {
 
   createdAt   DateTime @default(now())
   updatedAt   DateTime  @updatedAt 
+}
+
+// Gammification
+
+enum Rank {
+  INITIATE
+  NOVICE
+  MASTER
+  INVESTIGATOR
+  EXPLORER
+  RESEARCHER
 }

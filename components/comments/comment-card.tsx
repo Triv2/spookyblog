@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Article, Comment, Profile } from "@prisma/client";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUp } from "lucide-react";
 import Link from "next/link";
 
 interface CommentCardProps {
@@ -29,6 +29,16 @@ const CommentCard = ({
         {comment.content}
       </CardContent>
       <CardFooter className="flex justify-end">
+      <div className="flex">
+          <div className="flex gap-1 text-muted-foreground items-center justify-center">
+          <p>0</p>
+          <ArrowUp className="h-4 w-4 text-emerald-600 "/>
+          </div>
+          <div className="flex gap-1 text-muted-foreground items-center justify-center">
+          <ArrowDown className="h-4 w-4 text-purple-800"/>
+          <p>0</p>
+          </div>
+        </div>
         <Link className="text-red-600 flex items-center justify-center gap-1 hover:underline" href="/">
           Reply <ArrowRight className="h-4 w-4"/>
         </Link>
