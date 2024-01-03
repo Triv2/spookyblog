@@ -10,6 +10,7 @@ import ArticleCard from "@/components/articles/article-card";
 import Particles from "@/components/effects/particles";
 import Box from "@/components/box";
 import CategoryList from "@/components/categories/category-list";
+import Sidebar from "./_components/sidebar";
 
 
 const headingFont=localFont({
@@ -55,7 +56,7 @@ const LandingPage = () => {
         Discover, research, share, collaborate, and understand everything paranormal.
       </div>
             
-        <Button className="mt-6 bg-gradient-to-b from-fuchsia-600 to-purple-600 hover:scale-105 text-white transition-all shadow-sm" size="lg" variant="secondary" asChild>
+        <Button className="mt-6 bg-gradient-to-b z-30 from-fuchsia-600 to-purple-600 hover:scale-105 text-white transition-all shadow-sm" size="lg" variant="secondary" asChild>
             <Link href="/sign-up">
            <p className="md:text-lg"> Join the <span className={cn("text-emerald-300  text-xl",headingFont.className,)}>Paranormal</span> Now!</p>
             </Link>
@@ -63,11 +64,11 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-              <div className="flex md:flex-row flex-col w-full h-auto px-5 ">
+              <div className="flex md:flex-row flex-col w-full h-auto px-5 gap-2">
               <Particles className="fixed inset-0 z-10 " />
                 <div className=" md:w-[20%] gap-1">
                   
-                  <CategoryList/>
+                  <Sidebar/>
                 </div>
                 <div className="flex flex-col items-center text-white md:w-[80%] w-full gap-1 md:px-5 md:pr-10">
                 
