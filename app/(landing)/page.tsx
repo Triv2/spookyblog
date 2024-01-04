@@ -34,13 +34,13 @@ const textFont =  Poppins({
 
 const LandingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full pb-5">
+    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full">
       
       
       
-      <div className="flex items-center justify-center flex-col h-auto w-full">
+      <div className="flex items-center justify-center flex-col h-auto w-full bg-slate-900/40">
       
-        <div className="flex items-center justify-start md:flex-row flex-col p-2 w-full">
+        <div className="flex items-center justify-start md:flex-row flex-col p-2 w-full ">
           <div className="lg:w-[30%]">
           <Image  src="/hero.png" alt="logo" width={350} height={350}/>
           
@@ -57,15 +57,15 @@ const LandingPage = () => {
         Discover, research, share, collaborate, and understand everything paranormal.
       </div>
             
-        <Button className="mt-6 bg-gradient-to-b z-30 from-fuchsia-600 to-purple-600 hover:scale-105 text-white transition-all shadow-sm" size="lg" variant="secondary" asChild>
+        <Button className="mt-6 bg-gradient-to-b z-30 from-fuchsia-600 to-purple-600 hover:scale-105 text-white transition-all shadow-sm"  variant="secondary" asChild>
             <Link href="/sign-up">
-           <p className="md:text-lg"> Join the <span className={cn("text-emerald-300  text-xl",headingFont.className,)}>Paranormal</span> Now!</p>
+           <p className="md:text-lg"> Join the <span className={cn("text-emerald-300  text-xl",headingFont.className,)}>Paranormal</span> for FREE!</p>
             </Link>
           </Button>
           </div>
         </div>
       </div>
-              <div className="flex md:flex-row flex-col w-full h-auto px-5 gap-2">
+              <div className="flex md:flex-row flex-col w-full h-auto px-5 gap-2 bg-slate-900/40 pb-5">
               <Particles className="fixed inset-0 z-10 " />
                 <div className=" md:w-[20%] gap-1">
                   

@@ -1,4 +1,5 @@
 import { Logo } from "@/components/logo"
+import { Searchbar } from "@/components/searchbar"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { SearchIcon } from "lucide-react"
@@ -11,11 +12,8 @@ export const Navbar = () => {
         <Logo/>
         <div className="space-x-2  md:w-auto flex items-center justify-between w-full">
           {/* <ModeToggle/> */}
-          <Button size="sm" variant="secondary" asChild>
-            <Link className="flex items-center gap-1"href="/categories">
-            Categories
-            </Link>
-          </Button>
+          <Searchbar/>
+         
           <div className="flex gap-2 items-center">
           <Button size="sm" variant="outline" asChild>
             <Link href="/sign-in">
@@ -24,7 +22,7 @@ export const Navbar = () => {
           </Button>
           <Button size="sm"  asChild>
           <Link href="/sign-up">
-            Join for Free
+            Join
             </Link>
           </Button>
           </div>

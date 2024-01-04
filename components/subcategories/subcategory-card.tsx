@@ -1,44 +1,44 @@
+
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import SubCategoryArticle from "./subcategory-article";
+import { Separator } from "../ui/separator";
+import Highlighter, { HighlighterItem } from "../effects/highlighter";
 
 interface SubcategoryCardProps {}
 
 const SubcategoryCard = () => {
   return (
-    <Card className="bg-slate-900/20 p-0">
-      <CardHeader>
-        <CardTitle className="font-bold text-white text-lg">
-        <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
-          Subcategory One
-          </Link>
-          </CardTitle>
-        <CardDescription className="text-sm md:text-md text-white/70  justify-between flex-col items-center">
-          Subcategory One Description- Not longer than a paragraph. Maybe a total of three sentences will work best. Anything longer and it might get a bit confusing.
-          
-        </CardDescription>
-       <CardContent>
-       <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
-          Article one
-          </Link>
-          <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
-          Article two
-          </Link>
-          <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
-          Article three
-          </Link>
-        </CardContent>
-        
-      </CardHeader>
-    
-    </Card>
+    <Highlighter className="px-2">
+          <HighlighterItem className="px-4">
+    <Accordion className="z-20  rounded-3xl" type="single" collapsible>
+    <AccordionItem value="item-1">
+      <AccordionTrigger className="z-20 px-2 rounded-3xl">Subcategory One</AccordionTrigger>
+      <AccordionContent className="flex flex-col  rounded-3xl px-1 gap-y-1" >
+        <div className="flex items-center justify-between gap-2 pl-3">
+          <p className="text-muted-foreground py-1">
+            Description of Subcategory. One maybe two sentences.
+            </p>
+        <Link href="/" className="text-blue-500 text-md hover:scale-105 hover:text-blue-400 z-50">
+        Articles
+        </Link>
+        </div>
+        <div className="flex flex-col pl-5">
+       <SubCategoryArticle/>
+       <SubCategoryArticle/>
+       <SubCategoryArticle/>
+       </div>
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+  </HighlighterItem>
+        </Highlighter>
   );
 };
 export default SubcategoryCard;

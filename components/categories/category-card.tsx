@@ -9,23 +9,28 @@ import {
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SubcategoryCard from "../subcategories/subcategory-card";
+import Highlighter, { HighlighterItem, HighlighterItem02 } from "../effects/highlighter";
 
 interface CategoryCardProps {}
 
 const CategoryCard = () => {
   return (
-    <Card className="bg-slate-900/20 p-0">
+    <Highlighter className="px-2">
+      <HighlighterItem className="px-2">
+    <Card className="bg-slate-900/90 p-0 z-20">
       <CardHeader>
         <CardTitle className="font-bold text-white text-lg">
-        <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
+        <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline  p-2 rounded-full" href="/">
           Category One
           </Link>
           </CardTitle>
-        <CardDescription className="text-sm md:text-md text-white/70  justify-between flex-col items-center">
+        <CardDescription className="text-sm md:text-md text-white  justify-between flex-col items-center">
           Category One Description- Not longer than a paragraph. Maybe a total of three sentences will work best. Anything longer and it might get a bit confusing.
           
         </CardDescription>
-        <CardContent>
+        
+        
+        <CardContent className="flex flex-col gap-1  z-20 py-2">
         <SubcategoryCard/>
         <SubcategoryCard/>
         <SubcategoryCard/>
@@ -34,6 +39,8 @@ const CategoryCard = () => {
       </CardHeader>
     
     </Card>
+    </HighlighterItem>
+  </Highlighter>
   );
 };
 export default CategoryCard;
