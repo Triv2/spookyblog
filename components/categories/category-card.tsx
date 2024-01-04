@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import SubcategoryCard from "../subcategories/subcategory-card";
 
 interface CategoryCardProps {}
 
@@ -20,18 +21,15 @@ const CategoryCard = () => {
           Category One
           </Link>
           </CardTitle>
-        <CardDescription className="text-sm md:text-md text-white/70  justify-between flex-col hidden items-center">
+        <CardDescription className="text-sm md:text-md text-white/70  justify-between flex-col items-center">
+          Category One Description- Not longer than a paragraph. Maybe a total of three sentences will work best. Anything longer and it might get a bit confusing.
           
-          <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
-          SubCategoryOne
-        </Link>
-        <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
-          SubCategoryTwo
-        </Link>
-        <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline bg-slate-900/80 p-2 rounded-md" href="/">
-          SubCategoryThree
-        </Link>
         </CardDescription>
+        <CardContent>
+        <SubcategoryCard/>
+        <SubcategoryCard/>
+        <SubcategoryCard/>
+        </CardContent>
         
       </CardHeader>
     

@@ -35,7 +35,8 @@ const textFont =  Poppins({
 const LandingPage = () => {
   return (
     <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full pb-5">
-      <Particles className="fixed inset-0 z-10 " />
+      
+      
       
       <div className="flex items-center justify-center flex-col h-auto w-full">
       
