@@ -11,7 +11,7 @@ const CategoryPage = () => {
   return (
 <div className="flex items-center  flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg4.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full ">
   
-<Particles className="fixed inset-0 z-10 " />
+
 <Header 
   title="Our Wicked and Wonderful World"    
   description="Browse through the categories to find the articles you are interested in, or use the searchbar."

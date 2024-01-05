@@ -67,7 +67,7 @@ const LandingPage = () => {
         </div>
       </div>
               <div className="flex lg:flex-row flex-col w-full h-auto px-5 gap-2 bg-slate-900/40 pb-5">
-              <Particles className="fixed inset-0  " />
+              
                 <div className=" lg:w-[20%] gap-1">
                   
                   <Sidebar/>

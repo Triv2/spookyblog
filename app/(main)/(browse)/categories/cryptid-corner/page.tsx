@@ -16,7 +16,7 @@ const CryptidCornerPage = () => {
   <div className="z-30">
   <SubcategorySwitcher/>
   </div>
-<Particles className="fixed inset-0 z-0 " />
+
 </div>
 </div>
   );

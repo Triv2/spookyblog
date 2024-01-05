@@ -57,7 +57,7 @@ const ArticleCard = ({
         <div className="md:w-[30%] flex items-center justify-start flex-col">
       <Image  className="rounded-md shadow-md w-auto h-auto"src="/article1.png" alt="articleone" width={250} height={250}/>
       </div>
-      <div className="md:w-[65%]  text-clip line-clamp-3 overflow-auto "> 
+      <div className="md:w-[65%]  text-clip line-clamp-3 overflow-auto z-20"> 
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
       Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
       It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 

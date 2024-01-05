@@ -1,3 +1,4 @@
+import Particles from "@/components/effects/particles";
 import { Footer } from "./_components/footer";
 import { Navbar } from "./_components/navbar";
 
@@ -10,6 +11,7 @@ const LandingLayout = ({
     <div className="min-h-screen h-auto dark:bg-fuchsia-900/40">
       <Navbar/>
       <main >
+      <Particles className="fixed inset-0  " />
       {children}
       </main>
       <Footer/>
