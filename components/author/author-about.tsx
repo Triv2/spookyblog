@@ -1,18 +1,25 @@
 import Link from "next/link";
 import AuthorAvatar from "./author-avatar";
 import { Author } from "@prisma/client";
+import localFont from "next/font/local";
+import { cn } from "@/lib/utils";
 
 interface AuthorAboutProps {
   author?:Author;
 }
-
+const nameFont=localFont({
+  src:"../../public/fonts/creepster.woff2",
+});
+const titleFont=localFont({
+  src:"../../public/fonts/cevicheOne.woff2",
+});
 const AuthorAbout = ({
   author,
 }:AuthorAboutProps) => {
   return (
 <div className="flex items-center">
           
-          <Link className="flex items-center justify-center gap-2 " href="/">
+          <Link className="flex items-center justify-center gap-2 z-10" href="/">
          {/* {author && author.imageUrl &&( 
          <AuthorAvatar 
           name={author?.userName} 
@@ -20,10 +27,10 @@ const AuthorAbout = ({
           className="shadow-md shadow-emerald-500"
          /> 
          )} */}
-         <AuthorAvatar name="Eru" imageUrl="/avatars/avatarf1.png" className="shadow-md shadow-emerald-500"/>
+         <AuthorAvatar name="Eru" imageUrl="/avatars/avaf1.png" className="shadow-md shadow-emerald-500 bg-purple-500/20"/>
           <div>
-          <p className="text-md md:text-lg font-bold text-purple-500/90">Eru</p>
-          <p className="text-sm md:text-md text-emerald-300/60">Lead Paranormal Researcher</p>
+          <p className={cn("text-lg  font-bold text-purple-500/80")}>Anna</p>
+          <p className={cn("text-md  text-emerald-300/60",titleFont.className)}>Lead Paranormal Researcher</p>
           </div>
         </Link>
        </div>
