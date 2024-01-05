@@ -20,7 +20,7 @@ const AuthorAbout = ({
           className="shadow-md shadow-emerald-500"
          /> 
          )} */}
-         <AuthorAvatar name="Eru" imageUrl="/avatarf1.png" className="shadow-md shadow-emerald-500"/>
+         <AuthorAvatar name="Eru" imageUrl="/avatars/avatarf1.png" className="shadow-md shadow-emerald-500"/>
           <div>
           <p className="text-md md:text-lg font-bold">Eru</p>
           <p className="text-sm md:text-md text-muted-foreground">Lead Paranormal Researcher</p>

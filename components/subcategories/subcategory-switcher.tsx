@@ -19,66 +19,29 @@ import {
 } from "@/components/ui/popover"
 import { useRouter } from "next/navigation"
 
-const categories = [
+const subcategories = [
   {
-    value: "categories",
-    label: "Categories",
+    value: "subcategory1",
+    label: "Subcategory 1",
   },
   {
-    value: "cryptid corner",
-    label: "Cryptid Corner",
+    value: "subcategory2",
+    label: "Subcategory 2",
   },
   {
-    value: "paranormal science",
-    label: "Paranormal Science",
+    value: "subcategory3",
+    label: "Subcategory 3",
   },
-  {
-    value: "cosmic mythology",
-    label: "Cosmic Mythology",
-  },
-  {
-    value: "ghost hunting",
-    label: "Ghost Hunting",
-  },
-  {
-    value: "spirit rumors",
-    label: "Spirit Rumors",
-  },
-  {
-    value: "urban legends",
-    label: "Urban Legends",
-  },
+ 
 ]
 
-export function Searchbar() {
+export function SubcategorySwitcher() {
   const router = useRouter();
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
-  const route = (currentValue:any) => {
+  const switcher = (currentValue:any) => {
     setValue(currentValue === value ? "" : currentValue)
-    
-    if(currentValue==="cryptid corner"){
-      router.push("/categories/cryptid-corner");
-    }
-    if(currentValue==="cosmic mythology"){
-      router.push("/categories/cosmic-mythology");
-    }
-    if(currentValue=="paranormal science"){
-      router.push("/categories/paranormal-science");
-    }
-    if(currentValue==="ghost hunting"){
-      router.push("/categories/ghost-hunting");
-    }
-    if(currentValue==="spirit rumors"){
-      router.push("/categories/spirit-rumors");
-    }
-    if(currentValue==="urban legends"){
-      router.push("/categories/urban-legends");
-    }
-    if(currentValue==="categories"){
-      router.push("/categories");
-    }
     setOpen(false)
   }
 
@@ -92,7 +55,7 @@ export function Searchbar() {
           className="w-auto justify-between text-ellipsis truncate z-30"
         >
           {value
-            ? categories.find((category) => category.value === value)?.label
+            ? subcategories.find((category) => category.value === value)?.label
             : "Category"}
           <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -102,13 +65,13 @@ export function Searchbar() {
           <CommandInput placeholder="Search categories..." className="h-9" />
           <CommandEmpty>No category found.</CommandEmpty>
           <CommandGroup>
-            {categories.map((category) => (
+            {subcategories.map((category) => (
               <CommandItem
                 className={" truncate"}
                 key={category.value}
                 value={category.value}
                 onSelect={(currentValue:any) => {
-                  route(currentValue)
+                  switcher(currentValue)
                 }}
               >
                 {category.label}

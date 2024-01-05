@@ -34,7 +34,7 @@ const textFont =  Poppins({
 
 const LandingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full">
+    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full">
       
       
       
@@ -42,7 +42,7 @@ const LandingPage = () => {
       
         <div className="flex items-center justify-start md:flex-row flex-col p-2 w-full ">
           <div className="lg:w-[30%]">
-          <Image  src="/hero.png" alt="logo" width={350} height={350}/>
+          <Image  src="/headers/hero.png" alt="logo" width={350} height={350}/>
           
           </div>
           <div className="flex flex-col items-center justify-center ">
