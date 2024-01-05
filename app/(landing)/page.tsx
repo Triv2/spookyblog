@@ -52,7 +52,7 @@ const LandingPage = () => {
             <h1 className={cn("text-4xl sm:text-7xl text-center text-emerald-400   ",headingFont.className,)}>Paranormal</h1>
             
             <div className={cn(
-        "text-xl text-purple-200/80 mt-2 max-w-xs  tracking-widest md:max-w-2xl text-center mx-auto",
+        "text-3xl text-purple-200/80 mt-2 max-w-xs  tracking-widest md:max-w-2xl text-center mx-auto",
         subHeadingFont.className
         )}>
         Discover, research, share, collaborate, and understand everything paranormal.
