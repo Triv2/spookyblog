@@ -55,19 +55,19 @@ export function Searchbar() {
     setValue(currentValue === value ? "" : currentValue)
     
     if(currentValue==="cryptid corner"){
-      router.push("/cryptid-corner");
+      router.push("/categories/cryptid-corner");
     }
     if(currentValue==="cosmic mythology"){
-      router.push("/cosmic-mythology");
+      router.push("/categories/cosmic-mythology");
     }
     if(currentValue=="paranormal science"){
-      router.push("/paranormal-science");
+      router.push("/categories/paranormal-science");
     }
     if(currentValue==="ghost hunting"){
-      router.push("/ghost-hunting");
+      router.push("/categories/ghost-hunting");
     }
     if(currentValue==="spirit rumors"){
-      router.push("/spirit-rumors");
+      router.push("/categories/spirit-rumors");
     }
     if(currentValue==="categories"){
       router.push("/categories");

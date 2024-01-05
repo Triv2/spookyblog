@@ -8,7 +8,7 @@ interface CategoryPageProps {}
 
 const CategoryPage = () => {
   return (
-<div className="flex items-center  flex-col min-h-screen h-auto bg-[url(/spookybg3.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full ">
+<div className="flex items-center  flex-col min-h-screen h-auto bg-[url(/spookybg4.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full ">
   
 <Particles className="fixed inset-0 z-10 " />
 <div className="h-[150px] bg-slate-900/50 w-full flex flex-col items-center justify-center gap-2">
