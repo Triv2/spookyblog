@@ -16,6 +16,9 @@ import Sidebar from "./_components/sidebar";
 const headingFont=localFont({
   src:"../../public/fonts/rubikfont.woff2",
 });
+const subHeadingFont=localFont({
+  src:"../../public/fonts/creepster.woff2",
+});
 
 const textFont =  Poppins({
   subsets: [ "latin"],
@@ -46,11 +49,11 @@ const LandingPage = () => {
           
           </div>
           <div className="flex flex-col items-center justify-center ">
-            <h1 className={cn("text-4xl md:text-7xl text-center text-emerald-400   ",headingFont.className,)}>Paranormal</h1>
+            <h1 className={cn("text-4xl sm:text-7xl text-center text-emerald-400   ",headingFont.className,)}>Paranormal</h1>
             
             <div className={cn(
-        "text-sm md:text-xl text-black dark:text-purple-200/80 mt-2 max-w-xs md:max-w-2xl text-center mx-auto",
-        textFont.className
+        "text-xl text-purple-200/80 mt-2 max-w-xs  tracking-widest md:max-w-2xl text-center mx-auto",
+        subHeadingFont.className
         )}>
         Discover, research, share, collaborate, and understand everything paranormal.
       </div>

@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import localFont from "next/font/local";
 import { Article, Profile } from "@prisma/client";
 import { ArrowDown, ArrowRight, ArrowUp } from "lucide-react";
 import Image from "next/image";
@@ -14,21 +15,27 @@ import AuthorAvatar from "../author/author-avatar";
 import AuthorAbout from "../author/author-about";
 import Highlighter, { HighlighterItem } from "../effects/highlighter";
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 interface ArticleCardProps {
   article?:Article;
 }
+const headingFont=localFont({
+  src:"../../public/fonts/flavors.woff2",
+});
 
 const ArticleCard = ({
   article,
 }:ArticleCardProps) => {
+
+  
   return (
    
     <Card className="bg-slate-900 w-full  cursor-none">
       
       <CardHeader>
         
-        <CardTitle className="font-bold  text-2xl lg:text-4xl text-emerald-400">
+        <CardTitle className={cn("font-bold tracking-wider  text-2xl lg:text-4xl text-emerald-400",headingFont.className,)}>
           Article One Title
           </CardTitle>
           

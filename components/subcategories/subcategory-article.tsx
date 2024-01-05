@@ -26,10 +26,10 @@ return null;
     
 <Accordion type="single" collapsible>
   <AccordionItem value="item-1">
-    <AccordionTrigger className="z-40">Article One</AccordionTrigger>
+    <AccordionTrigger className="z-40 text-emerald-200 font-bold">Article One</AccordionTrigger>
     <AccordionContent className="flex items-center justify-between z-40 px-1" >
-      <p className="text-muted-foreground py-1 pl-2">Description of Article</p>
-      <Link className="text-blue-500 text-md hover:scale-105 hover:text-blue-400 z-50" href="/">
+      <p className="text-purple-200/80 py-1 pl-2">Description of Article</p>
+      <Link className="text-emerald-500 text-md hover:underline hover:text-emerald-400 z-50" href="/">
         View 
       </Link>
     </AccordionContent>
