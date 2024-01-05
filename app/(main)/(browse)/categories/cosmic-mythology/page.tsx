@@ -1,5 +1,6 @@
 import Particles from "@/components/effects/particles";
 import Header from "../_components/header";
+import { SubcategorySwitcher } from "@/components/subcategories/subcategory-switcher";
 
 interface CosmicMythologyPageProps {}
 
@@ -12,6 +13,9 @@ const CosmicMythologyPage = () => {
   description="Learn about lore and history of the paranormal from our ancestors."
   imageUrl="/headers/cmnobg2.png"
   />
+  <div className="z-30">
+  <SubcategorySwitcher/>
+  </div>
 <Particles className="fixed inset-0 z-10 " />
 </div>
 </div>

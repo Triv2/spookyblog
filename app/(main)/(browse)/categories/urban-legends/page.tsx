@@ -1,5 +1,6 @@
 import Particles from "@/components/effects/particles";
 import Header from "../_components/header";
+import { SubcategorySwitcher } from "@/components/subcategories/subcategory-switcher";
 
 interface UrbanLegendPageProps {}
 
@@ -12,6 +13,9 @@ const UrbanLegendPage = () => {
   description="Legends from cities all over the world"
   imageUrl="/headers/unobg1.png"
   />
+  <div className="z-30">
+  <SubcategorySwitcher/>
+  </div>
 <Particles className="fixed inset-0 z-10 " />
 </div>
 </div>

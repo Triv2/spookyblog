@@ -58,7 +58,7 @@ const LandingPage = () => {
       </div>
             
         <Button className="mt-6 bg-gradient-to-b z-30 from-fuchsia-600 to-purple-600 hover:scale-105 text-white transition-all shadow-sm"  variant="secondary" asChild>
-            <Link href="/sign-up">
+            <Link href="/">
            <p className="md:text-lg"> Join the <span className={cn("text-emerald-300  text-xl",headingFont.className,)}>Paranormal</span> for FREE!</p>
             </Link>
           </Button>

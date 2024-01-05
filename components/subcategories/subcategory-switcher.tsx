@@ -18,6 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { useRouter } from "next/navigation"
+import ArticleCard from "../articles/article-card"
 
 const subcategories = [
   {
@@ -38,7 +39,7 @@ const subcategories = [
 export function SubcategorySwitcher() {
   const router = useRouter();
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [value, setValue] = React.useState("subcategory1")
 
   const switcher = (currentValue:any) => {
     setValue(currentValue === value ? "" : currentValue)
@@ -46,6 +47,9 @@ export function SubcategorySwitcher() {
   }
 
   return (
+    <div className="flex items-center justify-center flex-col py-2 bg-slate-900/80 ">
+      <div className="flex items-center gap-1 md:flex-row flex-col-reverse p-2">
+        <p className="text-muted-foreground px-3">Search and select a subcategory to reveal all the articles.</p>
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
@@ -56,13 +60,13 @@ export function SubcategorySwitcher() {
         >
           {value
             ? subcategories.find((category) => category.value === value)?.label
-            : "Category"}
+            : "Subcategory"}
           <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search categories..." className="h-9" />
+          <CommandInput placeholder="Search subcategories..." className="h-9" />
           <CommandEmpty>No category found.</CommandEmpty>
           <CommandGroup>
             {subcategories.map((category) => (
@@ -87,5 +91,23 @@ export function SubcategorySwitcher() {
         </Command>
       </PopoverContent>
     </Popover>
+    </div>
+    
+      {value === "subcategory1" && (
+        <div className="flex items-center flex-col justify-center px-5 py-3 gap-2">
+        <ArticleCard/>
+        <ArticleCard/>
+        </div>
+      )}
+      {value === "subcategory2" && (
+        <div className="flex items-center flex-col justify-center px-5 py-3 gap-2">
+        <ArticleCard/>
+        <ArticleCard/>
+        <ArticleCard/>
+        </div>
+      )}
+
+    
+    </div>
   )
 }

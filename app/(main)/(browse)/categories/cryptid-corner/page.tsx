@@ -1,5 +1,6 @@
 import Particles from "@/components/effects/particles";
 import Header from "../_components/header";
+import { SubcategorySwitcher } from "@/components/subcategories/subcategory-switcher";
 
 interface CryptidCornerPageProps {}
 
@@ -12,7 +13,10 @@ const CryptidCornerPage = () => {
   description="The place for the creepy crawlers, elusive creatures, and mysterious entities"
   imageUrl="/headers/cnobg1.png"
   />
-<Particles className="fixed inset-0 z-10 " />
+  <div className="z-30">
+  <SubcategorySwitcher/>
+  </div>
+<Particles className="fixed inset-0 z-0 " />
 </div>
 </div>
   );

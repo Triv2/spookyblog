@@ -16,12 +16,12 @@ export const Navbar = () => {
          
           <div className="flex gap-2 items-center">
           <Button size="sm" variant="outline" asChild>
-            <Link href="/sign-in">
+            <Link href="/">
             Login
             </Link>
           </Button>
           <Button size="sm"  asChild>
-          <Link href="/sign-up">
+          <Link href="/">
             Join
             </Link>
           </Button>

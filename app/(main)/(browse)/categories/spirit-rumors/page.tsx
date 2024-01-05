@@ -1,5 +1,6 @@
 import Particles from "@/components/effects/particles";
 import Header from "../_components/header";
+import { SubcategorySwitcher } from "@/components/subcategories/subcategory-switcher";
 
 interface SpritRumorsPageProps {}
 
@@ -12,6 +13,9 @@ const SpritRumorsPage = () => {
   description="Find out what the spirits have to say about the current times"
   imageUrl="/headers/spnobg1.png"
   />
+  <div className="z-30">
+  <SubcategorySwitcher/>
+  </div>
 <Particles className="fixed inset-0 z-10 " />
 </div>
 </div>
