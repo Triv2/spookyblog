@@ -19,7 +19,7 @@ interface CategoryCardProps {}
 
 const CategoryCard = () => {
   return (
-    <div className=" bg-slate-900 rounded-md py-5">
+    <div className=" bg-slate-900 rounded-md">
       <div className=" flex flex-col md:flex-row items-center justify-center w-full h-auto px-10  pl-10 ">
         <Image
           src="/headers/cmnobg1.png"
