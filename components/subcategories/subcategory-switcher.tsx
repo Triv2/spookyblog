@@ -48,12 +48,12 @@ export function SubcategorySwitcher() {
 
   return (
     <div className="flex items-center justify-center flex-col py-2 bg-slate-900/80 ">
-      <div className="flex items-center gap-1 md:flex-row flex-col-reverse p-2">
-        <p className="text-muted-foreground px-3">Search and select a subcategory to reveal all the articles.</p>
+      <div className="flex items-center gap-1 md:flex-row flex-col p-2">
+        
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
+          variant="green"
           role="combobox"
           aria-expanded={open}
           className="w-auto justify-between text-ellipsis truncate z-30"
@@ -65,13 +65,13 @@ export function SubcategorySwitcher() {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
-        <Command>
+        <Command className="bg-gradient-to-l from-emerald-600/40 to-emerald-900/60 flex items-center gap-2 text-emerald-300 bg-opacity-50">
           <CommandInput placeholder="Search subcategories..." className="h-9" />
           <CommandEmpty>No category found.</CommandEmpty>
           <CommandGroup>
             {subcategories.map((category) => (
               <CommandItem
-                className={" truncate"}
+                className={" truncate text-emerald-400 aria-selected:bg-emerald-700 aria-selected:text-emerald-200"}
                 key={category.value}
                 value={category.value}
                 onSelect={(currentValue:any) => {
@@ -91,6 +91,7 @@ export function SubcategorySwitcher() {
         </Command>
       </PopoverContent>
     </Popover>
+    <p className="text-purple-300/70 px-3">Search and select a subcategory to reveal all the articles.</p>
     </div>
     
       {value === "subcategory1" && (

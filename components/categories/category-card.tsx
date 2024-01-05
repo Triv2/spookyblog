@@ -15,9 +15,8 @@ interface CategoryCardProps {}
 
 const CategoryCard = () => {
   return (
-    <Highlighter className="px-2">
-      <HighlighterItem className="px-2">
-    <Card className="bg-slate-900/90 p-0 z-20">
+    
+    <Card className="bg-slate-900 p-0 z-20">
       <CardHeader>
         <CardTitle className="font-bold text-white text-lg">
         <Link className="text-blue-600 flex items-center justify-center gap-1 hover:underline  p-2 rounded-full" href="/">
@@ -39,8 +38,7 @@ const CategoryCard = () => {
       </CardHeader>
     
     </Card>
-    </HighlighterItem>
-  </Highlighter>
+  
   );
 };
 export default CategoryCard;

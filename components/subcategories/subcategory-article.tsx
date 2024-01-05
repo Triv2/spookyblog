@@ -23,8 +23,7 @@ if (!isMounted) {
 return null;
 }
   return (
-    <Highlighter className="px-2">
-          <HighlighterItem className="px-2">
+    
 <Accordion type="single" collapsible>
   <AccordionItem value="item-1">
     <AccordionTrigger className="z-40">Article One</AccordionTrigger>
@@ -36,8 +35,7 @@ return null;
     </AccordionContent>
   </AccordionItem>
 </Accordion>
-</HighlighterItem>
-</Highlighter>
+
   );
 }
 export default SubCategoryArticle;

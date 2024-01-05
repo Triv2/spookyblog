@@ -13,6 +13,7 @@ import Link from "next/link";
 import AuthorAvatar from "../author/author-avatar";
 import AuthorAbout from "../author/author-about";
 import Highlighter, { HighlighterItem } from "../effects/highlighter";
+import { Button } from "../ui/button";
 
 interface ArticleCardProps {
   article?:Article;
@@ -27,7 +28,7 @@ const ArticleCard = ({
       
       <CardHeader>
         
-        <CardTitle className="font-bold  text-2xl lg:text-4xl text-white">
+        <CardTitle className="font-bold  text-2xl lg:text-4xl text-emerald-400">
           Article One Title
           </CardTitle>
           
@@ -36,8 +37,8 @@ const ArticleCard = ({
          
           <div className="flex sm:flex-row flex-col sm:justify-between md:items-center">
             <div>
-          <p className="pl-2">Category {'>'} Subcategory</p>
-          <CardDescription className="pl-3 flex flex-col">
+          <p className="pl-2 text-purple-400/80">Category {'>'} Subcategory</p>
+          <CardDescription className="pl-3 flex flex-col text-purple-300/50">
                 {new Date().toUTCString()}
           </CardDescription>
           </div>
@@ -58,11 +59,12 @@ const ArticleCard = ({
       </div>
       </CardContent>
       <CardFooter className="flex justify-between items-center gap-2">
-        
-        <Link className="z-30 text-blue-600 hover:scale-105 hover:text-blue-500 font-bold flex items-center justify-center gap-1 hover:underline bg-slate-800/80 p-2 rounded-md" href="/">
+        <Button className="z-10 hover:scale-105" variant="purple" asChild>
+        <Link  href="/">
           Read More <ArrowRight className="h-4 w-4"/>
         </Link>
-          <p className="text-muted-foreground">Comments (0)</p>
+        </Button>
+          <p className=" text-purple-300/50">Comments (0)</p>
         
         
         

@@ -15,8 +15,7 @@ interface SubcategoryCardProps {}
 
 const SubcategoryCard = () => {
   return (
-    <Highlighter className="px-2">
-          <HighlighterItem className="px-4">
+  
     <Accordion className="z-20  rounded-3xl" type="single" collapsible>
     <AccordionItem value="item-1">
       <AccordionTrigger className="z-20 px-2 rounded-3xl">Subcategory One</AccordionTrigger>
@@ -37,8 +36,7 @@ const SubcategoryCard = () => {
       </AccordionContent>
     </AccordionItem>
   </Accordion>
-  </HighlighterItem>
-        </Highlighter>
+  
   );
 };
 export default SubcategoryCard;

@@ -22,8 +22,8 @@ const AuthorAbout = ({
          )} */}
          <AuthorAvatar name="Eru" imageUrl="/avatars/avatarf1.png" className="shadow-md shadow-emerald-500"/>
           <div>
-          <p className="text-md md:text-lg font-bold">Eru</p>
-          <p className="text-sm md:text-md text-muted-foreground">Lead Paranormal Researcher</p>
+          <p className="text-md md:text-lg font-bold text-purple-500/90">Eru</p>
+          <p className="text-sm md:text-md text-emerald-300/60">Lead Paranormal Researcher</p>
           </div>
         </Link>
        </div>

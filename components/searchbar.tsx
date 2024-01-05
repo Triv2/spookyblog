@@ -93,7 +93,7 @@ export function Searchbar() {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
+          variant="green"
           role="combobox"
           aria-expanded={open}
           className="w-auto justify-between text-ellipsis truncate z-30"
@@ -104,14 +104,14 @@ export function Searchbar() {
           <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandInput placeholder="Search categories..." className="h-9" />
+      <PopoverContent className="w-[200px] p-0  border-0">
+        <Command className=" bg-gradient-to-l from-fuchsia-600/40 to-purple-900/60 flex items-center gap-2 text-fuchsia-500 bg-opacity-50">
+          <CommandInput placeholder="Search categories..." className="h-9 text-fuchsia-300" />
           <CommandEmpty>No category found.</CommandEmpty>
-          <CommandGroup>
+          <CommandGroup >
             {categories.map((category) => (
               <CommandItem
-                className={" truncate"}
+                className={" truncate text-purple-400 aria-selected:bg-purple-500/40 aria-selected:text-purple-200"}
                 key={category.value}
                 value={category.value}
                 onSelect={(currentValue:any) => {
