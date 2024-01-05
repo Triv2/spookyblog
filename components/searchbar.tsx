@@ -21,6 +21,10 @@ import { useRouter } from "next/navigation"
 
 const categories = [
   {
+    value: "/",
+    label: "Home",
+  },
+  {
     value: "categories",
     label: "Categories",
   },
@@ -78,6 +82,9 @@ export function Searchbar() {
     }
     if(currentValue==="categories"){
       router.push("/categories");
+    }
+    if(currentValue==="/"){
+      router.push("/");
     }
     setOpen(false)
   }

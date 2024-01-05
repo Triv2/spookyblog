@@ -9,7 +9,7 @@ const LandingLayout = ({
   return (
     <div className="min-h-screen h-auto dark:bg-fuchsia-900/40">
       <Navbar/>
-      <main className="pt-14">
+      <main >
       {children}
       </main>
       <Footer/>

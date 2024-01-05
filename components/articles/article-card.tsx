@@ -22,9 +22,8 @@ const ArticleCard = ({
   article,
 }:ArticleCardProps) => {
   return (
-    <Highlighter>
-      <HighlighterItem>
-    <Card className="bg-slate-900/80 w-full z-30 cursor-none">
+   
+    <Card className="bg-slate-900 w-full  cursor-none">
       
       <CardHeader>
         
@@ -50,7 +49,7 @@ const ArticleCard = ({
         <div className="md:w-[30%] flex items-center justify-start flex-col">
       <Image  className="rounded-md shadow-md w-auto h-auto"src="/article1.png" alt="articleone" width={250} height={250}/>
       </div>
-      <div className="md:w-[65%]  text-clip line-clamp-3 overflow-auto z-30"> 
+      <div className="md:w-[65%]  text-clip line-clamp-3 overflow-auto "> 
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
       Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
       It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
@@ -69,8 +68,7 @@ const ArticleCard = ({
         
       </CardFooter>
     </Card>
-    </HighlighterItem>
-    </Highlighter>
+    
   );
 };
 export default ArticleCard;
