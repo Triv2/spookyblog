@@ -9,11 +9,12 @@ import {
 import Link from 'next/link';
 import Highlighter, { HighlighterItem } from '../effects/highlighter';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface SubCategoryArticleProps {}
 
 const SubCategoryArticle:React.FC<SubCategoryArticleProps> = () => {
-
+const router = useRouter();
 const [isMounted, setIsMounted] = useState(false);
 
 useEffect(() => {
@@ -23,9 +24,12 @@ setIsMounted(true);
 if (!isMounted) { 
 return null;
 }
+const onClick=()=>{
+  router.push('/articles/test');
+}
   return (
     
-  <section className="px-2 py-2 hover:bg-slate-800">
+  <section onClick={onClick} className="px-2 py-2 hover:bg-slate-800">
    <p className="z-40 text-emerald-200 text-center  text-md font-bold">Article One</p>
     <div className="flex items-center justify-evenly gap-2 z-40 px-1" >
       <Image alt="article" src="/headers/cmnobg1.png" width={75} height={75}/> 

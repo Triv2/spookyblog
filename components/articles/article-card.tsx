@@ -16,6 +16,7 @@ import AuthorAbout from "../author/author-about";
 import Highlighter, { HighlighterItem } from "../effects/highlighter";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "../ui/skeleton";
 
 interface ArticleCardProps {
   article?:Article;
@@ -66,7 +67,7 @@ const ArticleCard = ({
       </div>
       </CardContent>
       <CardFooter className="flex justify-between items-center gap-2">
-        <Button className="z-10 hover:scale-105" variant="purple" asChild>
+        <Button className="z-10 hover:scale-105 bg-gradient-to-tr from-purple-600/40 to-emerald-900/60" variant="purple" asChild>
         <Link  href="/articles/test">
           Read More <ArrowRight className="h-4 w-4"/>
         </Link>
@@ -81,3 +82,11 @@ const ArticleCard = ({
   );
 };
 export default ArticleCard;
+ArticleCard.Skeleton = function SkeletonArticleCard() {
+  return (
+    <div className="flex flex-col items-center gap-2 w-full ">
+      <Skeleton className="aspect-video bg-gradient-to-bl from-purple-600/40 to-emerald-900/60 h-[300px] px-5 w-full p-2" />
+     
+    </div>
+  );
+};

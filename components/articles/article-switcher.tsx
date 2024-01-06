@@ -1,6 +1,6 @@
 "use client"
 
-import * as React from "react"
+import {useState, useEffect, Suspense} from'react'
 import { Search, CheckIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -23,6 +23,10 @@ import { Skeleton } from "../ui/skeleton"
 
 const articles = [
   {
+    value: "articles",
+    label: "Articles",
+  },
+  {
     value: "article1",
     label: "Article 1",
   },
@@ -39,8 +43,8 @@ const articles = [
 
 export const ArticleSwitcher=()=> {
   const router = useRouter();
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("article1")
+  const [open, setOpen] = useState(false)
+  const [value, setValue] = useState("articles")
 
   const switcher = (currentValue:any) => {
     setValue(currentValue === value ? "" : currentValue)
@@ -94,18 +98,34 @@ export const ArticleSwitcher=()=> {
     </Popover>
     <p className="text-purple-300/70 px-3 text-sm">Search or select an article.</p>
     </div>
+    {value === "articles" && (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center  justify-center px-5  py-3 gap-5">
+        <Suspense fallback={<ArticleCard.Skeleton />}>
+        <ArticleCard/>
+        <ArticleCard/>
+        <ArticleCard/>
+        <ArticleCard/>
+        <ArticleCard/>
+        <ArticleCard/>
+        <ArticleCard/>
+        <ArticleCard/>
+        <ArticleCard/>
+        </Suspense>
+        </div>
+      )}
     
       {value === "article1" && (
         <div className="flex items-center flex-col justify-center px-5  py-3 gap-2">
-        <ArticleCard/>
-        <ArticleCard/>
+        
+        <Suspense fallback={<ArticleCard.Skeleton />}>
+          <ArticleCard/>
+        </Suspense>
         </div>
       )}
       {value === "article2" && (
         <div className="flex items-center flex-col justify-center px-5 py-3 gap-2">
         <ArticleCard/>
-        <ArticleCard/>
-        <ArticleCard/>
+        
         </div>
       )}
 

@@ -56,7 +56,7 @@ const Article = ({
       </CardHeader>
       <CardContent className="text-sm md:text-xl text-white/70 flex  flex-col gap-5">
        
-      <div className=" flex items-center justify-center gap-5 "> 
+      <div className=" flex md:flex-row flex-col items-center justify-center gap-5 "> 
       <div className=" flex items-center justify-start flex-col md:w-[30%]">
       <Image  className="rounded-md shadow-md w-auto h-auto"src="/article1.png" alt="articleone" width={350} height={350}/>
       </div>
@@ -68,8 +68,8 @@ const Article = ({
       and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
       </div>
       </div>
-      <div className=" flex items-center justify-center gap-5 "> 
-      
+
+      <div className=" flex items-center justify-center md:flex-row flex-col-reverse gap-5 "> 
       <div className="md:w-[65%]">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
       Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
@@ -81,7 +81,8 @@ const Article = ({
       <Image  className="rounded-md shadow-md w-auto h-auto"src="/article1.png" alt="articleone" width={350} height={350}/>
       </div>
       </div>
-      <div className=" flex items-center justify-center gap-5 "> 
+
+      <div className=" flex items-center justify-center md:flex-row flex-col gap-5 "> 
       <div className=" flex items-center justify-start flex-col md:w-[30%]">
       <Image  className="rounded-md shadow-md w-auto h-auto"src="/article1.png" alt="articleone" width={350} height={350}/>
       </div>
@@ -95,7 +96,7 @@ const Article = ({
       </div>
       
       </CardContent>
-      <CardFooter className="flex justify-between items-center gap-2">
+      <CardFooter className="flex justify-between md:flex-row flex-col-reverse items-center gap-4">
         <Button className="z-10 hover:scale-105" variant="green" >
           Leave a Comment (0)
         </Button>

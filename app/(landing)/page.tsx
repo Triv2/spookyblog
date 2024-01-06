@@ -53,8 +53,8 @@ const LandingPage = () => {
                 subHeadingFont.className
               )}
             >
-              Discover, research, share, collaborate, and understand everything
-              paranormal.
+              Discover the unknown, research the bizarre, and reach into the
+              great beyond.
             </div>
 
             {/* <Button className="mt-6 text-purple-300 hover:text-purple-200 z-30 group hover:scale-105 transition-all shadow-sm"  variant="purple" asChild>

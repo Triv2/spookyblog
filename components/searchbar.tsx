@@ -58,7 +58,7 @@ const categories = [
   },
 ]
 
-export function CategorySearchbar() {
+export function Searchbar() {
   const router = useRouter();
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
@@ -103,7 +103,7 @@ export function CategorySearchbar() {
           variant="green"
           role="combobox"
           aria-expanded={open}
-          className="w-auto justify-between text-ellipsis truncate z-30 bg-gradient-to-bl from-purple-600/40 to-emerald-900/60"
+          className="w-auto justify-between text-ellipsis truncate z-30 bg-gradient-to-tr from-purple-600/40 to-emerald-900/60"
         >
           {value
             ? categories.find((category) => category.value === value)?.label

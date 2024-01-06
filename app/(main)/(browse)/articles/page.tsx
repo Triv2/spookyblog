@@ -9,8 +9,8 @@ const ArticlesPage = () => {
   <div className="bg-slate-900/40 min-h-screen flex flex-col items-center h-auto w-full">
   <Header
   title="Articles"    
-  description="Open your mind and understand the paranormal"
-  imageUrl="/headers/cmnobg2.png"
+  description="Open your mind and embrace the paranormal"
+  imageUrl="/headers/plogonobg1.png"
   />
   <div className="flex items-center  justify-center w-full h-full bg-slate-900/80 ">
   <ArticleSwitcher/>

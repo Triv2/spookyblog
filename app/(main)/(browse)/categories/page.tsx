@@ -14,7 +14,7 @@ const CategoryPage = () => {
 
 <Header 
   title="Our Wicked and Wonderful World"    
-  description="Browse through the categories to find the articles you are interested in, or use the searchbar."
+  description="Browse through the categories to find the articles you are interested in."
   imageUrl="/headers/spnobg2.png"
   />
 
