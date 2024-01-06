@@ -18,7 +18,7 @@ const CategoryPage = () => {
   imageUrl="/headers/spnobg2.png"
   />
 
-<div className="h-auto min-h-screen bg-slate-900/80 w-full grid md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-2 pb-5 pt-5">
+<div className=" min-h-full bg-slate-900/80  w-full grid md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-2 pb-5 pt-5 px-5">
    
       <CategoryCard/>
       <CategoryCard/>
@@ -26,6 +26,7 @@ const CategoryPage = () => {
       <CategoryCard/>
       <CategoryCard/>
       <CategoryCard/>
+      
       
 </div>
 
