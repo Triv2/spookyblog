@@ -19,42 +19,27 @@ import {
 } from "@/components/ui/popover"
 import { useRouter } from "next/navigation"
 
-const categories = [
+const articles = [
   {
-    value: "/",
-    label: "Home",
+    value: "/articles",
+    label: "Articles",
   },
   {
-    value: "categories",
-    label: "Categories",
+    value: "article1",
+    label: "Article 1",
   },
   {
-    value: "cryptid corner",
-    label: "Cryptid Corner",
+    value: "article2",
+    label: "Article 2",
   },
   {
-    value: "paranormal science",
-    label: "Paranormal Science",
+    value: "article2",
+    label: "Article 2",
   },
-  {
-    value: "cosmic mythology",
-    label: "Cosmic Mythology",
-  },
-  {
-    value: "ghost hunting",
-    label: "Ghost Hunting",
-  },
-  {
-    value: "spirit rumors",
-    label: "Spirit Rumors",
-  },
-  {
-    value: "urban legends",
-    label: "Urban Legends",
-  },
+  
 ]
 
-export function Searchbar() {
+export function ArticleSearchbar() {
   const router = useRouter();
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
@@ -74,15 +59,7 @@ export function Searchbar() {
     if(currentValue==="ghost hunting"){
       router.push("/categories/ghost-hunting");
     }
-    if(currentValue==="spirit rumors"){
-      router.push("/categories/spirit-rumors");
-    }
-    if(currentValue==="urban legends"){
-      router.push("/categories/urban-legends");
-    }
-    if(currentValue==="categories"){
-      router.push("/categories");
-    }
+    
     if(currentValue==="/"){
       router.push("/");
     }
@@ -96,10 +73,10 @@ export function Searchbar() {
           variant="green"
           role="combobox"
           aria-expanded={open}
-          className="w-auto justify-between text-ellipsis truncate z-30"
+          className="w-auto justify-between text-ellipsis truncate z-30 bg-gradient-to-bl from-purple-600/40 to-emerald-900/60"
         >
           {value
-            ? categories.find((category) => category.value === value)?.label
+            ? articles.find((article) => article.value === value)?.label
             : "Category"}
           <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -109,7 +86,7 @@ export function Searchbar() {
           <CommandInput placeholder="Search categories..." className="h-9 text-fuchsia-300" />
           <CommandEmpty>No category found.</CommandEmpty>
           <CommandGroup >
-            {categories.map((category) => (
+            {articles.map((category) => (
               <CommandItem
                 className={" truncate text-purple-400 aria-selected:bg-purple-500/40 aria-selected:text-purple-200"}
                 key={category.value}

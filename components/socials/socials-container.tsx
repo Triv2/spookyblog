@@ -5,7 +5,7 @@ interface SocialsContainerProps {}
 
 const SocialsContainer = () => {
   return (
-<div className="flex  flex-col gap-1 p-2 z-30">
+<div className="flex items-center justify-center flex-col gap-1 p-2 z-30">
    
     <section className="flex items-center justify-center  gap-1 p-2 w-full max-w-[300px]">
       <SocialButton

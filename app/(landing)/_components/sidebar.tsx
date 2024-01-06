@@ -24,10 +24,11 @@ const Sidebar = () => {
   <div className="flex flex-col  justify-center w-full p-2">
         <h2 className={cn("text-3xl tracking-wider text-emerald-400",headingFont.className)}>Community News</h2>
         <Separator />
-        <div className="flex flex-wrap">
+        <div className="flex items-center justify-center py-1 flex-wrap">
         <NewsCard/>
         <NewsCard/>
         <NewsCard/>
+        
         </div>
     </div>
     <SocialsContainer/>

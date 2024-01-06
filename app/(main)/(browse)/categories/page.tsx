@@ -2,7 +2,7 @@ import ArticleCard from "@/components/articles/article-card";
 import CategoryCard from "@/components/categories/category-card";
 import CategoryList from "@/components/categories/category-list";
 import Particles from "@/components/effects/particles";
-import { Searchbar } from "@/components/searchbar";
+
 import Header from "./_components/header";
 
 interface CategoryPageProps {}

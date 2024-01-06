@@ -66,10 +66,10 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="flex lg:flex-row flex-col w-full h-auto px-5 gap-2 bg-slate-900/40 pb-5">
-        <div className=" lg:w-[20%] gap-1">
+        <div className=" lg:max-w-[25%] gap-1">
           <Sidebar />
         </div>
-        <div className="flex flex-col items-center text-white lg:w-[80%] w-full gap-1 lg:px-5 lg:pr-10">
+        <div className="flex flex-col items-center text-white lg:w-[75%] w-full gap-1 lg:px-5 lg:pr-10">
           <ArticleCard />
           <ArticleCard />
           <ArticleCard />

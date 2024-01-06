@@ -8,6 +8,12 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Paranormal Blog',
   description: 'A blog about the paranormal world',
+  icons:[
+    {
+      url: '/logo/logo.webp',
+      href: '/logo/logo.webp',
+    }
+  ]
 }
 
 export default function RootLayout({

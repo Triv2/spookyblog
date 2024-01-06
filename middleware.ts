@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 
 export default authMiddleware({
-  publicRoutes: ["/","/categories/:path*","/categories",]
+  publicRoutes: ["/","/categories/:path*","/categories","/articles/:path*","/articles",]
 });
 
 export const config = {
