@@ -20,7 +20,7 @@ const SubcategoryCard = () => {
   
     <Accordion className="z-20 rounded-3xl" type="single" collapsible>
     <AccordionItem value="item-1">
-      <AccordionTrigger className="z-20 px-2 text-emerald-300  flex  gap-5 font-bold rounded-3xl">
+      <AccordionTrigger className="z-20 px-2 text-emerald-300  flex justify-around gap-5 font-bold rounded-3xl">
           <Image src="/headers/spnobg1.png" alt="subcategory" width={55} height={55} />
           <div className="flex flex-col">
           <p>Subcategory One</p>

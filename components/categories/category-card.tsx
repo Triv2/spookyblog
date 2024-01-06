@@ -19,7 +19,7 @@ interface CategoryCardProps {}
 
 const CategoryCard = () => {
   return (
-    <div className=" bg-slate-900 rounded-md">
+    <div className=" bg-slate-900 rounded-md py-4 space-y-4">
       <div className=" flex flex-col md:flex-row items-center justify-center w-full h-auto px-10  pl-10 ">
         <Image
           src="/headers/cmnobg1.png"
@@ -40,7 +40,7 @@ const CategoryCard = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-1  z-20 py-2 px-5 ">
+      <div className="flex flex-col gap-1 h-full z-20 py-2 px-5 ">
         <SubcategoryCard />
         <SubcategoryCard />
         <SubcategoryCard />

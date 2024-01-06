@@ -1,6 +1,7 @@
 import Particles from "@/components/effects/particles";
 import Header from "../_components/header";
 import { SubcategorySwitcher } from "@/components/subcategories/subcategory-switcher";
+import SubcategoryTabs from "@/components/subcategories/subcategory-tabs";
 
 interface GhostHuntingPageProps {}
 
@@ -13,8 +14,8 @@ const GhostHuntingPage = () => {
   description="The place for finding mysterious spirits, shadows, and other spiritual things"
   imageUrl="/headers/gnobg1.png"
   />
-  <div className="z-30">
-  <SubcategorySwitcher/>
+  <div className="flex items-center  justify-center w-full h-full ">
+  <SubcategoryTabs/>
   </div>
 
 </div>

@@ -1,6 +1,7 @@
 import Particles from "@/components/effects/particles";
 import Header from "../_components/header";
 import { SubcategorySwitcher } from "@/components/subcategories/subcategory-switcher";
+import SubcategoryTabs from "@/components/subcategories/subcategory-tabs";
 
 interface ParanormalSciencePageProps {}
 
@@ -13,8 +14,8 @@ const ParanormalSciencePage = () => {
   description="Try to understand the weird, strange, and unusual things"
   imageUrl="/headers/snobg2.png"
   />
-  <div className="z-30">
-  <SubcategorySwitcher/>
+  <div className="flex items-center  justify-center w-full h-full ">
+  <SubcategoryTabs/>
   </div>
 
 </div>

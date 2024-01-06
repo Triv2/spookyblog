@@ -1,6 +1,7 @@
 import Particles from "@/components/effects/particles";
 import Header from "../_components/header";
 import { SubcategorySwitcher } from "@/components/subcategories/subcategory-switcher";
+import SubcategoryTabs from "@/components/subcategories/subcategory-tabs";
 
 interface SpritRumorsPageProps {}
 
@@ -13,8 +14,8 @@ const SpritRumorsPage = () => {
   description="Find out what the spirits have to say about the current times"
   imageUrl="/headers/spnobg1.png"
   />
-  <div className="z-30">
-  <SubcategorySwitcher/>
+  <div className="flex items-center  justify-center w-full h-full ">
+  <SubcategoryTabs/>
   </div>
 
 </div>
