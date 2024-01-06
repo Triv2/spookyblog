@@ -20,6 +20,7 @@ import {
 import { useRouter } from "next/navigation"
 import ArticleCard from "../articles/article-card"
 import { Skeleton } from "../ui/skeleton"
+import Article from '@/app/(main)/(browse)/articles/[articleId]/_components/article'
 
 const articles = [
   {
@@ -99,7 +100,7 @@ export const ArticleSwitcher=()=> {
     <p className="text-purple-300/70 px-3 text-sm">Search or select an article.</p>
     </div>
     {value === "articles" && (
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center  justify-center px-5  py-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center h-full justify-center px-5  py-3 gap-5">
         <Suspense fallback={<ArticleCard.Skeleton />}>
         <ArticleCard/>
         <ArticleCard/>
@@ -115,16 +116,16 @@ export const ArticleSwitcher=()=> {
       )}
     
       {value === "article1" && (
-        <div className="flex items-center flex-col justify-center px-5  py-3 gap-2">
+        <div className="flex items-center flex-col justify-center h-full px-5  py-3 gap-2">
         
         <Suspense fallback={<ArticleCard.Skeleton />}>
-          <ArticleCard/>
+          <Article/>
         </Suspense>
         </div>
       )}
       {value === "article2" && (
         <div className="flex items-center flex-col justify-center px-5 py-3 gap-2">
-        <ArticleCard/>
+        <Article/>
         
         </div>
       )}

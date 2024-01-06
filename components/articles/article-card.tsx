@@ -32,7 +32,7 @@ const ArticleCard = ({
   
   return (
    
-    <Card className="bg-slate-900 w-full cursor-none">
+    <Card className="bg-slate-900 w-full h-full cursor-none">
       
       <CardHeader>
         
