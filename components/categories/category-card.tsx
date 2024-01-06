@@ -31,7 +31,7 @@ const CategoryCard = () => {
         <div className="flex justify-center  flex-col   p-2">
           <Link
             className="text-2xl  text-center text-emerald-400 sm:text-start font-bold flex items-center justify-center gap-1 hover:underline  z-10 rounded-full"
-            href="/"
+            href="/categories/cryptid-corner"
           >
             Cryptid Corner
           </Link>

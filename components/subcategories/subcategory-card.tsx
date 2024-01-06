@@ -10,29 +10,34 @@ import Link from "next/link";
 import SubCategoryArticle from "./subcategory-article";
 import { Separator } from "../ui/separator";
 import Highlighter, { HighlighterItem } from "../effects/highlighter";
+import { ScrollArea } from "../ui/scroll-area";
+import Image from "next/image";
 
 interface SubcategoryCardProps {}
 
 const SubcategoryCard = () => {
   return (
   
-    <Accordion className="z-20  rounded-3xl" type="single" collapsible>
+    <Accordion className="z-20 rounded-3xl" type="single" collapsible>
     <AccordionItem value="item-1">
-      <AccordionTrigger className="z-20 px-2 text-emerald-300 font-bold rounded-3xl">Subcategory One</AccordionTrigger>
-      <AccordionContent className="flex flex-col  rounded-3xl px-1 gap-y-1" >
-        <div className="flex items-center justify-between gap-2 pl-3">
-          <p className="text-purple-300/80 py-1">
+      <AccordionTrigger className="z-20 px-2 text-emerald-300  flex  gap-5 font-bold rounded-3xl">
+          <Image src="/headers/spnobg1.png" alt="subcategory" width={55} height={55} />
+          <div className="flex flex-col">
+          <p>Subcategory One</p>
+          <p className="text-purple-300/80 text-xs py-1">
             Description of Subcategory. One maybe two sentences.
             </p>
-        <Link href="/" className="text-emerald-500 text-md hover:underline hover:text-emerald-400 z-50">
-        Articles
-        </Link>
-        </div>
-        <div className="flex flex-col pl-5">
+            </div>
+        </AccordionTrigger>
+      <AccordionContent className="flex flex-col  rounded-3xl px-1 gap-y-1" >
+        
+        <ScrollArea className="flex flex-col pl-5 gap-1 h-[250px]">
        <SubCategoryArticle/>
        <SubCategoryArticle/>
        <SubCategoryArticle/>
-       </div>
+       <SubCategoryArticle/>
+       <SubCategoryArticle/>
+       </ScrollArea>
       </AccordionContent>
     </AccordionItem>
   </Accordion>
