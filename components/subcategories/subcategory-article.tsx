@@ -29,16 +29,16 @@ const onClick=()=>{
 }
   return (
     
-  <section onClick={onClick} className="px-2 py-2 hover:bg-slate-800">
-   <p className="z-40 text-emerald-200 text-center  text-md font-bold">Article One</p>
-    <div className="flex items-center justify-evenly gap-2 z-40 px-1" >
+  <section onClick={onClick} className="px-1 py-2 hover:bg-slate-800 rounded-md">
+   
+    <div className="flex items-center justify-evenly gap-2 z-40 sm:px-1" >
       <Image alt="article" src="/headers/cmnobg1.png" width={75} height={75}/> 
-      <div className="flex flex-col items-start justify-start py-1 px-2 ">
-      
-        <p className="text-purple-200/80 pl-1 text-sm">One sentence that describes the article, maybe some extra length</p>
-       <div className="flex justify-between text-purple-200/60 items-center w-full">
+      <div className="flex flex-col items-center justify-start py-1 px-2 gap-1 ">
+      <p className="z-40 text-emerald-200  text-md font-bold">Article One</p>
+        <p className="text-purple-200/80 pl-1 text-sm line-clamp-4">One sentence that describes the article, maybe some extra length</p>
+       <div className="flex items-start justify-between md:flex-row flex-col text-purple-200/60  w-full">
         <p className="text-xs pl-2">{new Date().toUTCString()}</p>
-        <p className="text-xs pr-2">Comments(0)</p>
+        <p className="text-xs hidden md:flex md:pr-2">Comments(0)</p>
        </div>
       </div>
      
