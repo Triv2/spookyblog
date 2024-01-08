@@ -1,11 +1,15 @@
 import Link from "next/link";
-import AuthorAvatar from "./author-avatar";
-import { Author } from "@prisma/client";
+
+import { Author, Profile } from "@prisma/client";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
+import ProfileAvatar from "./profile-avatar";
 
-interface AuthorAboutProps {
-  author?:Author;
+interface ProfileAboutProps {
+  profile?:Profile;
+  name?:string;
+  imageUrl?:string;
+  avatarClassName?:string;
 }
 const nameFont=localFont({
   src:"../../public/fonts/creepster.woff2",
@@ -13,9 +17,12 @@ const nameFont=localFont({
 const titleFont=localFont({
   src:"../../public/fonts/cevicheOne.woff2",
 });
-const AuthorAbout = ({
-  author,
-}:AuthorAboutProps) => {
+const ProfileAbout = ({
+  profile,
+  name,
+  imageUrl,
+  avatarClassName,
+}:ProfileAboutProps) => {
   return (
 <div className="flex items-center">
           
@@ -27,13 +34,13 @@ const AuthorAbout = ({
           className="shadow-md shadow-emerald-500"
          /> 
          )} */}
-         <AuthorAvatar name="Eru" imageUrl="/avatars/avaf1.png" className="shadow-md shadow-emerald-500 bg-purple-400/40"/>
+         <ProfileAvatar name={name} imageUrl={imageUrl} className={avatarClassName}/>
           <div>
-          <p className={cn("text-lg  font-bold text-purple-500/80")}>Anna</p>
-          <p className={cn("text-md tracking-wider text-emerald-300/60",titleFont.className)}>Lead Paranormal Researcher</p>
+          <p className={cn("text-lg  font-bold text-purple-500/80")}>{name}</p>
+          <p className={cn("text-md tracking-widest font-thin text-emerald-300/60",titleFont.className)}>Paranormal Initiate</p>
           </div>
         </Link>
        </div>
   );
 }
-export default AuthorAbout;
+export default ProfileAbout;

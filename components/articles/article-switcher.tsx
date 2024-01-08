@@ -21,6 +21,7 @@ import { useRouter } from "next/navigation"
 import ArticleCard from "../articles/article-card"
 import { Skeleton } from "../ui/skeleton"
 import Article from '@/app/(main)/(browse)/articles/[articleId]/_components/article'
+import Sidebar from '@/app/(main)/(browse)/categories/_components/sidebar'
 
 const articles = [
   {
@@ -121,13 +122,15 @@ export const ArticleSwitcher=()=> {
         <Suspense fallback={<ArticleCard.Skeleton />}>
           <Article/>
         </Suspense>
+
         </div>
       )}
       {value === "article2" && (
-        <div className="flex items-center flex-col justify-center px-5 py-3 gap-2">
-        <Article/>
-        
-        </div>
+         <div className=" min-h-screen w-full  p-2 md:p-10 flex  md:flex-row flex-col justify-center gap-1">
+    
+          <Article/>
+          <Sidebar/>
+</div>
       )}
 
     

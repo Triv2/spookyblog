@@ -9,26 +9,40 @@ import {
 import { Article, Comment, Profile } from "@prisma/client";
 import { ArrowDown, ArrowRight, ArrowUp } from "lucide-react";
 import Link from "next/link";
+import { Button } from "../ui/button";
+import { Avatar } from "../ui/avatar";
+import ProfileAvatar from "../profile/profile-avatar";
+import ProfileAbout from "../profile/profile-about";
 
 interface CommentCardProps {
-  comment:Comment;
+  comment?:Comment;
 }
 
 const CommentCard = ({
   comment,
 }:CommentCardProps) => {
   return (
-    <Card>
+    <Card className="bg-slate-900 w-full">
       <CardHeader>
-        <CardTitle >{comment.profileId}</CardTitle>
-        <CardDescription className="text-sm md:text-xl">
-          {new Date(comment.createdAt).toUTCString()}
+       
+        <CardTitle className="text-lg flex items-center " > 
+        
+        <ProfileAbout
+          imageUrl="/avatars/avatarf2.png"
+          name="Profile Name"
+          avatarClassName="w-10 h-10 mr-2"
+        />
+        </CardTitle>
+        <CardDescription className="text-sm text-purple-200/80">
+          {new Date().toUTCString()}
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        {comment.content}
+      <CardContent className="pl-10 text-emerald-400/80">
+        Comment Content will be here. Need to add a max character limit. No need for comments to be longer than 2 paragraphs.
+        Comment Content will be here. Need to add a max character limit. No need for comments to be longer than 2 paragraphs.
+        Comment Content will be here. Need to add a max character limit. No need for comments to be longer than 2 paragraphs.
       </CardContent>
-      <CardFooter className="flex justify-end">
+      <CardFooter className="flex justify-between">
       <div className="flex">
           <div className="flex gap-1 text-muted-foreground items-center justify-center">
           <p>0</p>
@@ -39,9 +53,11 @@ const CommentCard = ({
           <p>0</p>
           </div>
         </div>
-        <Link className="text-red-600 flex items-center justify-center gap-1 hover:underline" href="/">
+        <Button variant="green" asChild>
+        <Link className="flex items-center justify-center gap-1 hover:scale-105 z-10 bg-gradient-to-br from-purple-600/40 to-emerald-900/60" href="/">
           Reply <ArrowRight className="h-4 w-4"/>
         </Link>
+        </Button>
       </CardFooter>
     </Card>
   );

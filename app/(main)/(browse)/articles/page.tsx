@@ -14,6 +14,7 @@ const ArticlesPage = () => {
   />
   <div className="flex items-center  justify-center w-full h-full bg-slate-900/80 ">
   <ArticleSwitcher/>
+  
   </div>
   
 
