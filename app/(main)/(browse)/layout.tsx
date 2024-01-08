@@ -8,9 +8,9 @@ const BrowseLayout = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="min-h-screen h-auto dark:bg-fuchsia-900/40">
+    <div className="min-h-screen h-auto w-full bg-slate-900">
       <Navbar/>
-      <main className="pt-14">
+      <main >
       <Particles className="fixed inset-0  " />
       {children}
       </main>

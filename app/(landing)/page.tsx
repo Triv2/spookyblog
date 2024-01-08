@@ -26,8 +26,9 @@ const textFont = Poppins({
 
 const LandingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full pt-14">
-      <div className="flex items-center justify-center flex-col h-auto w-full bg-slate-900/40">
+    <div className=" min-h-screen h-auto bg-[url(/backgrounds/spookybg2.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full ">
+      <div className="bg-slate-900/70">
+      <div className="flex items-center justify-center flex-col h-auto w-full pt-14 ">
         <div className="flex items-center justify-start md:flex-row flex-col p-2 w-full ">
           <div className="lg:w-[30%]">
             <Image
@@ -54,7 +55,7 @@ const LandingPage = () => {
               )}
             >
               Discover the unknown, research the bizarre, and reach into the
-              great beyond.
+              great beyond
             </div>
 
             {/* <Button className="mt-6 text-purple-300 hover:text-purple-200 z-30 group hover:scale-105 transition-all shadow-sm"  variant="purple" asChild>
@@ -65,7 +66,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="flex lg:flex-row flex-col w-full h-auto px-5 gap-2 bg-slate-900/40 pb-5">
+      <div className="flex lg:flex-row flex-col w-full h-auto px-5 gap-2  pb-5">
         <div className=" lg:max-w-[25%] gap-1">
           <Sidebar />
         </div>
@@ -76,6 +77,7 @@ const LandingPage = () => {
           <ArticleCard />
           <ArticleCard />
         </div>
+      </div>
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ const Article = ({ article }: ArticleProps) => {
           Article One Title
         </CardTitle>
 
-        <div className="flex sm:flex-row flex-col sm:justify-between md:items-center">
+        <div className="flex sm:flex-row flex-col sm:justify-between md:items-center gap-1">
           <div>
             <p className="pl-2 text-purple-400/80">
               Category {">"} Subcategory

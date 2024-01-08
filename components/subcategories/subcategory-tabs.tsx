@@ -17,8 +17,8 @@ if (!isMounted) {
 return null;
 }
   return (
-    <Tabs defaultValue="account" className="w-full bg-slate-900/80">
-  <TabsList className="bg-gradient-to-l from-fuchsia-600/30 to-purple-900/60 flex rounded-none items-center justify-center ">
+    <Tabs defaultValue="subcategories" className="w-full bg-slate-900/80">
+  <TabsList className="bg-gradient-to-l from-fuchsia-600/30 to-purple-900/60 flex flex-col md:flex-row rounded-none items-center justify-center w-auto h-auto ">
     <TabsTrigger className="hover:bg-green-300/50 hover:text-purple-700 text-emerald-400 z-10 data-[state=active]:text-purple-400 data-[state=active]:bg-emerald-600/40" value="subcategory1">Subcategory1</TabsTrigger>
     <TabsTrigger className="hover:bg-green-300/50 hover:text-purple-700 text-emerald-400 z-10 data-[state=active]:text-purple-400 data-[state=active]:bg-emerald-600/40"value="subcategory2">Subcategory2</TabsTrigger>
     <TabsTrigger className="hover:bg-green-300/50 hover:text-purple-700 text-emerald-400 z-10 data-[state=active]:text-purple-400 data-[state=active]:bg-emerald-600/40"value="subcategory3">Subcategory3</TabsTrigger>
