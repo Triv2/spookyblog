@@ -46,7 +46,7 @@ const onClick=()=>{
         
        </div>
        <div className="flex items-center justify-end w-full">
-       <p className="text-xs md:pr-2 text-purple-200/80 ">Comments (0)</p>
+       <p className="text-xs md:pr-2 text-emerald-200/80 ">Comments (0)</p>
        </div>
       </div>
      

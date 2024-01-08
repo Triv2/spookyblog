@@ -44,7 +44,7 @@ const onClick=()=>{
         <p className="text-purple-200/80 pl-1 text-sm line-clamp-4">One sentence that describes the article, maybe some extra length</p>
        <div className="flex items-start justify-between md:flex-row flex-col text-purple-200/60  w-full">
         <p className="text-xs pl-2">{new Date().toUTCString()}</p>
-        <p className="text-xs hidden md:flex md:pr-2">Comments(0)</p>
+        <p className="text-xs hidden md:flex text-emerald-200/70 md:pr-2">Comments(0)</p>
        </div>
       </div>
      

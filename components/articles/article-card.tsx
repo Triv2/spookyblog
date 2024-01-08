@@ -72,7 +72,7 @@ const ArticleCard = ({
           Read More <ArrowRight className="h-4 w-4"/>
         </Link>
         </Button>
-          <p className=" text-purple-300/50">Comments (0)</p>
+          <p className=" text-emerald-300/50">Comments (0)</p>
         
         
         
