@@ -117,19 +117,21 @@ export const ArticleSwitcher=()=> {
       )}
     
       {value === "article1" && (
-        <div className="flex items-center flex-col justify-center h-full px-5  py-3 gap-2">
+        <div className=" min-h-screen w-full  p-2 md:p-10 flex  md:flex-row flex-col justify-center gap-1">
         
         <Suspense fallback={<ArticleCard.Skeleton />}>
           <Article/>
+          <Sidebar/>
         </Suspense>
 
         </div>
       )}
       {value === "article2" && (
          <div className=" min-h-screen w-full  p-2 md:p-10 flex  md:flex-row flex-col justify-center gap-1">
-    
+    <Suspense fallback={<ArticleCard.Skeleton />}>
           <Article/>
           <Sidebar/>
+          </Suspense>
 </div>
       )}
 

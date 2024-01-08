@@ -27,7 +27,7 @@ if (!isMounted) {
 return null;
 }
   return (
-    <div className="h-full md:w-[30%] bg-slate-900 p-1 md:px-5 flex flex-col gap-2 border-[1px] rounded-md border-emerald-900/60">
+    <div className="h-full md:w-[30%] bg-slate-900 p-1 md:px-5 flex flex-col gap-2 border-[1px] rounded-md border-purple-900/50">
       
       <div className="p-2">
         <p className={cn("font-bold tracking-wider text-3xl text-emerald-400 py-2",headingFont.className)}>Related Articles</p>

@@ -37,7 +37,7 @@ const CommentCard = ({
           {new Date().toUTCString()}
         </CardDescription>
       </CardHeader>
-      <CardContent className="pl-10 text-emerald-400/80">
+      <CardContent className="pl-10 text-emerald-300/80">
         Comment Content will be here. Need to add a max character limit. No need for comments to be longer than 2 paragraphs.
         Comment Content will be here. Need to add a max character limit. No need for comments to be longer than 2 paragraphs.
         Comment Content will be here. Need to add a max character limit. No need for comments to be longer than 2 paragraphs.

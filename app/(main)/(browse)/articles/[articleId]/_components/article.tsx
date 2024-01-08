@@ -134,7 +134,7 @@ const Article = ({ article }: ArticleProps) => {
               titleFont.className
             )}
           >
-            Comments
+            Comments (10)
           </p>
           <Comments />
         </div>
