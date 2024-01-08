@@ -12,7 +12,7 @@ export const Navbar = () => {
         <Logo/>
         
           {/* <ModeToggle/> */}
-          
+         
           <Searchbar/>
          
           {/* <div className="flex gap-2 items-center">

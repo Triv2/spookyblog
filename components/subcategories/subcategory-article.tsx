@@ -35,13 +35,13 @@ const onClick=()=>{
 }
   return (
     
-    <section onClick={onClick} className="p-2 hover:bg-emerald-600/20 rounded-md z-10 cursor-pointer">
+    <section onClick={onClick} className="p-2 hover:bg-emerald-600/20 rounded-xl z-10 cursor-pointer">
    <p className={cn("z-40 text-emerald-400 tracking-widest text-lg font-bold", headingFont.className)}>Article One Title</p>
     <div className="flex items-center justify-evenly gap-2 z-40 sm:px-1" >
       <Image alt="article" src="/headers/cmnobg1.png" width={75} height={75}/> 
       <div className="flex flex-col items-center justify-start py-1 px-2 gap-1 ">
       
-        <p className="text-purple-200/80 pl-1 text-sm line-clamp-4">One sentence that describes the article, maybe some extra length</p>
+        <p className="text-purple-300/80 pl-1 text-sm line-clamp-4">One sentence that describes the article, maybe some extra length</p>
        <div className="flex items-start justify-between md:flex-row flex-col text-purple-200/60  w-full">
         <p className="text-xs pl-2">{new Date().toUTCString()}</p>
         <p className="text-xs hidden md:flex text-emerald-200/70 md:pr-2">Comments(0)</p>

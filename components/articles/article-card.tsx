@@ -67,7 +67,7 @@ const ArticleCard = ({
       </div>
       </CardContent>
       <CardFooter className="flex justify-between items-center gap-2">
-        <Button className="z-10 hover:scale-105 bg-gradient-to-br from-purple-600/40 to-emerald-900/60" variant="purple" asChild>
+        <Button className="z-10 hover:scale-105 bg-gradient-to-br text-emerald-400 from-purple-600/40 to-emerald-900/60" variant="purple" asChild>
         <Link  href="/articles/test">
           Read More <ArrowRight className="h-4 w-4"/>
         </Link>
