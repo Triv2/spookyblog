@@ -103,7 +103,7 @@ export function Searchbar() {
           variant="green"
           role="combobox"
           aria-expanded={open}
-          className="w-auto justify-between text-ellipsis truncate z-30 bg-gradient-to-tr from-purple-600/40 to-emerald-900/60"
+          className="w-auto justify-between text-ellipsis truncate z-30 bg-gradient-to-tl from-emerald-600/40 to-purple-900/60 "
         >
           {value
             ? categories.find((category) => category.value === value)?.label
@@ -112,10 +112,10 @@ export function Searchbar() {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0  border-0">
-        <Command className=" bg-gradient-to-l from-fuchsia-600/40 to-purple-900/60 flex items-center gap-2 text-fuchsia-500 bg-opacity-50">
-          <CommandInput placeholder="Search categories..." className="h-9 text-fuchsia-300" />
-          <CommandEmpty>No category found.</CommandEmpty>
-          <CommandGroup >
+        <Command className=" bg-gradient-to-tl from-emerald-600/40 to-purple-900/60 flex items-center gap-2 text-fuchsia-500 bg-opacity-50">
+          <CommandInput placeholder="Search categories..." className="h-9 text-emerald-300 placeholder:text-emerald-300" />
+          <CommandEmpty className="text-emerald-300 text-sm p-4">No category found.</CommandEmpty>
+          <CommandGroup  >
             {categories.map((category) => (
               <CommandItem
                 className={" truncate text-purple-400 aria-selected:bg-purple-500/40 aria-selected:text-purple-200"}

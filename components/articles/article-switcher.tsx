@@ -63,7 +63,7 @@ export const ArticleSwitcher=()=> {
           variant="green"
           role="combobox"
           aria-expanded={open}
-          className="min-w-[200px] w-auto justify-between text-ellipsis truncate z-30"
+          className="min-w-[200px] w-auto justify-between text-ellipsis truncate z-30 bg-gradient-to-tl from-emerald-600/40  to-purple-900/60"
         >
           {value
             ? articles.find((article) => article.value === value)?.label
@@ -72,8 +72,8 @@ export const ArticleSwitcher=()=> {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
-        <Command className="bg-gradient-to-l from-emerald-600/40  to-emerald-900/60 flex items-center gap-2 text-emerald-300 bg-opacity-50 ">
-          <CommandInput placeholder="Search articles..." className="h-9 " />
+        <Command className="bg-gradient-to-tl from-emerald-600/40  to-purple-900/60 flex items-center gap-2 text-emerald-300 bg-opacity-50 ">
+          <CommandInput placeholder="Search articles..." className="h-9 placeholder:text-emerald-300 " />
           <CommandEmpty>No category found.</CommandEmpty>
           <CommandGroup>
             {articles.map((article) => (
