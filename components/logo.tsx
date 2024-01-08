@@ -12,7 +12,7 @@ export const Logo = () => {
   return (
     <Link href="/">
       <div className="hover:opacity-75 transition items-center gap-x-2   flex">
-        <Image src="/headers/hero.png" alt="logo" width={30} height={30} />
+        <Image className="transform -scale-x-100" src="/avatars/avaf1.png" alt="logo" width={30} height={30} />
       
       <p className={cn("text-lg text-emerald-400/90 pt-1 sm:flex hidden ",headingFont.className)}>
         Paranormal</p>

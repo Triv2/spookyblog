@@ -30,9 +30,10 @@ const LandingPage = () => {
       <div className="bg-slate-900/70">
       <div className="flex items-center justify-center flex-col h-auto w-full pt-14 ">
         <div className="flex items-center justify-start md:flex-row flex-col p-2 w-full ">
-          <div className="lg:w-[30%] flex items-center justify-center">
+          <div className="lg:w-[30%] flex items-center justify-center ">
             <Image
-              src="/headers/hero.png"
+              src="/avatars/avaf1.png"
+              className="transform -scale-x-100"
               alt="logo"
               width={350}
               height={350}
