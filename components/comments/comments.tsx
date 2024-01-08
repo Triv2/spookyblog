@@ -21,7 +21,7 @@ const Comments = () => {
           >
             Comments (10)
           </p>
-<Button className="flex items-center justify-center gap-1 hover:scale-105  bg-gradient-to-br z-10 from-purple-600/40 to-emerald-900/60 " variant="green" >
+<Button className="flex items-center justify-center gap-1 hover:scale-105 text-emerald-400 bg-gradient-to-br z-10 from-purple-600/40 to-emerald-900/60 " variant="purple" >
            <MessagesSquare className="h-5 w-5"/>Comment
           </Button>
           </div>

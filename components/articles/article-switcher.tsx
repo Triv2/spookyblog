@@ -60,10 +60,10 @@ export const ArticleSwitcher=()=> {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant="green"
+          variant="purple"
           role="combobox"
           aria-expanded={open}
-          className="min-w-[200px] w-auto justify-between text-ellipsis truncate z-30 bg-gradient-to-tl from-emerald-600/40  to-purple-900/60"
+          className="min-w-[200px] w-auto justify-between text-emerald-400 text-ellipsis truncate z-30 bg-gradient-to-tl from-emerald-600/40  to-purple-900/60"
         >
           {value
             ? articles.find((article) => article.value === value)?.label

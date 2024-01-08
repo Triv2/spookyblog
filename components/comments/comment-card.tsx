@@ -53,7 +53,7 @@ const CommentCard = ({
           <p>0</p>
           </div>
         </div>
-        <Button className="flex items-center justify-center gap-1 hover:scale-105 z-10 bg-gradient-to-br  from-purple-600/40 to-emerald-900/60" variant="green" asChild>
+        <Button className="flex items-center justify-center gap-1 text-emerald-400 hover:scale-105 z-10 bg-gradient-to-br  from-purple-600/40 to-emerald-900/60" variant="purple" asChild>
         <Link href="/">
            <Reply className="h-4 w-4"/>Reply
         </Link>
