@@ -54,7 +54,7 @@ const CommentCard = ({
           </div>
         </div>
         <Button variant="green" asChild>
-        <Link className="flex items-center justify-center gap-1 hover:scale-105 z-10 bg-gradient-to-br from-purple-600/40 to-emerald-900/60" href="/">
+        <Link className="flex items-center justify-center gap-1 hover:scale-105 z-10 bg-gradient-to-br  from-purple-600/40 to-emerald-900/60" href="/">
           Reply <ArrowRight className="h-4 w-4"/>
         </Link>
         </Button>
