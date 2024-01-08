@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Article, Comment, Profile } from "@prisma/client";
-import { ArrowDown, ArrowRight, ArrowUp } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUp, CornerRightDown, MessageSquareReply, Reply } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Avatar } from "../ui/avatar";
@@ -55,7 +55,7 @@ const CommentCard = ({
         </div>
         <Button className="flex items-center justify-center gap-1 hover:scale-105 z-10 bg-gradient-to-br  from-purple-600/40 to-emerald-900/60" variant="green" asChild>
         <Link href="/">
-          Reply <ArrowRight className="h-4 w-4"/>
+           <Reply className="h-4 w-4"/>Reply
         </Link>
         </Button>
       </CardFooter>

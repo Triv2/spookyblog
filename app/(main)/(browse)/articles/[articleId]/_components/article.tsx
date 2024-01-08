@@ -31,7 +31,7 @@ const titleFont = localFont({
 
 const Article = ({ article }: ArticleProps) => {
   return (
-    <Card className="bg-slate-900 w-full cursor-none">
+    <Card className="bg-slate-900 w-full cursor-none ">
       <CardHeader>
         <CardTitle
           className={cn(
@@ -128,16 +128,11 @@ const Article = ({ article }: ArticleProps) => {
       </CardContent>
       <CardFooter className="flex justify-between md:flex-row flex-col-reverse items-center gap-4 md:px-2 px-1">
         <div className="sm:p-3 p-1" >
-          <p
-            className={cn(
-              "font-bold tracking-wider text-3xl text-emerald-400",
-              titleFont.className
-            )}
-          >
-            Comments (10)
-          </p>
+          
+          
           <Comments />
         </div>
+        
       </CardFooter>
     </Card>
   );
