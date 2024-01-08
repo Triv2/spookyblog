@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description: 'A blog about the paranormal world',
   icons:[
     {
-      url: '/logo/logo.webp',
-      href: '/logo/logo.webp',
+      url: '/logo/glogo.png',
+      href: '/logo/glogo.png',
     }
   ]
 }

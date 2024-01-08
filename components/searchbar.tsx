@@ -114,7 +114,7 @@ export function Searchbar() {
           variant="purple"
           role="combobox"
           aria-expanded={open}
-          className="w-auto justify-between text-ellipsis text-emerald-400 truncate z-30 shadow-sm bg-gradient-to-tl from-emerald-600/70 to-purple-900/80 "
+          className="w-auto justify-between text-ellipsis text-emerald-400 truncate z-30 shadow-sm bg-gradient-to-tl from-emerald-700/70 to-purple-900/80 "
         >
           {value
             ? categories.find((category) => category.value === value)?.label
