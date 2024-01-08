@@ -103,7 +103,7 @@ export function Searchbar() {
           variant="purple"
           role="combobox"
           aria-expanded={open}
-          className="w-auto justify-between text-emerald-400 text-ellipsis truncate z-30 bg-gradient-to-tl from-emerald-600/40 to-purple-900/60 "
+          className="w-auto justify-between text-emerald-400 text-ellipsis shadow-sm  truncate z-30 bg-gradient-to-tl from-emerald-600/40 to-purple-900/60 "
         >
           {value
             ? categories.find((category) => category.value === value)?.label
@@ -118,7 +118,7 @@ export function Searchbar() {
           <CommandGroup  >
             {categories.map((category) => (
               <CommandItem
-                className={" truncate text-purple-400 aria-selected:bg-purple-500/40 aria-selected:text-purple-200"}
+                className={" truncate text-purple-400 aria-selected:bg-purple-500/40 aria-selected:text-emerald-300/80"}
                 key={category.value}
                 value={category.value}
                 onSelect={(currentValue:any) => {

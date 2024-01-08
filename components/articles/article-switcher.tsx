@@ -78,7 +78,7 @@ export const ArticleSwitcher=()=> {
           <CommandGroup>
             {articles.map((article) => (
               <CommandItem
-                className={" truncate text-emerald-400 aria-selected:bg-emerald-700 aria-selected:text-emerald-200"}
+                className={" truncate text-emerald-400 aria-selected:bg-emerald-400/80 aria-selected:text-purple-950/90"}
                 key={article.value}
                 value={article.value}
                 onSelect={(currentValue:any) => {
