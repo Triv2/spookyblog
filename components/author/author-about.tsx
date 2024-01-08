@@ -27,7 +27,7 @@ const AuthorAbout = ({
           className="shadow-md shadow-emerald-500"
          /> 
          )} */}
-         <AuthorAvatar name="Eru" imageUrl="/avatars/avaf1.png" className="shadow-md shadow-emerald-500 bg-gradient-to-t from-emerald-600/40 to-purple-900/60"/>
+         <AuthorAvatar name="Eru" imageUrl="/avatars/avaf1.png" className="shadow-md shadow-emerald-500 bg-gradient-to-t from-emerald-400/70 to-purple-900/60"/>
           <div>
           <p className={cn("text-lg  font-bold text-purple-500/80")}>Anna</p>
           <p className={cn("text-md tracking-wider text-emerald-300/60",titleFont.className)}>Lead Paranormal Researcher</p>
