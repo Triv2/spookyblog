@@ -11,6 +11,7 @@ import {
   CommandGroup,
   CommandInput,
   CommandItem,
+  CommandShortcut,
 } from "@/components/ui/command"
 import {
   Popover,
@@ -62,6 +63,16 @@ export function Searchbar() {
   const router = useRouter();
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setOpen((open) => !open)
+      }
+    }
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
 
   const route = (currentValue:any) => {
     setValue(currentValue === value ? "" : currentValue)
@@ -103,7 +114,7 @@ export function Searchbar() {
           variant="purple"
           role="combobox"
           aria-expanded={open}
-          className="w-auto justify-between text-ellipsis text-emerald-400 truncate z-30 shadow-sm bg-gradient-to-tl from-emerald-600/40 to-purple-900/60 "
+          className="w-auto justify-between text-ellipsis text-emerald-400 truncate z-30 shadow-sm bg-gradient-to-tl from-emerald-600/70 to-purple-900/80 "
         >
           {value
             ? categories.find((category) => category.value === value)?.label
@@ -125,6 +136,7 @@ export function Searchbar() {
                   route(currentValue)
                 }}
               >
+                
                 {category.label}
                 <CheckIcon
                   className={cn(
