@@ -30,7 +30,7 @@ const onClick=()=>{
 }
   return (
     
-  <section onClick={onClick} className="p-2 hover:bg-slate-800/40 rounded-md z-10 cursor-pointer min-w-[250px]">
+  <section onClick={onClick} className="p-2 hover:bg-slate-700/70 rounded-md z-10 cursor-pointer min-w-[250px]">
    <p className={cn("z-40 text-emerald-400 tracking-widest text-lg font-bold", headingFont.className)}>Article One Title</p>
    <p className="pl-2 text-purple-400/80">Category {'>'} Subcategory</p>
     <div className="flex items-center lg:flex-row flex-col justify-evenly gap-2 z-40 sm:px-1" >
