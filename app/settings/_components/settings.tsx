@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTransition, useState } from "react";
 import { useSession } from "next-auth/react";
-
+import localFont from "next/font/local";
 import { Switch } from "@/components/ui/switch";
 import {
   Select,
@@ -36,6 +36,11 @@ import { useCurrentUser } from "@/hooks/use-current-user";
 import { FormError } from "@/components/auth/form-error";
 import { FormSuccess } from "@/components/auth/form-success";
 import { UserRole } from "@prisma/client";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+const headingFont=localFont({
+  src:"../../../public/fonts/cevicheOne.woff2",
+});
 
 const Settings = () => {
   const user = useCurrentUser();
@@ -76,35 +81,70 @@ const Settings = () => {
 
   return ( 
     <Card className="w-[600px] bg-slate-900 z-10">
-      <CardHeader>
-        <p className="text-2xl font-semibold text-center">
-          ⚙️ Settings
+      <CardHeader className="flex items-center justify-center flex-col md:flex-row w-full gap-2">
+        <Image src="/headers/sgear.png" alt="settingsimage" width={100} height={100}/>
+        <p className={cn("text-6xl text-emerald-400 font-semibold tracking-widest text-center", headingFont.className)}>
+          Settings
         </p>
       </CardHeader>
+     
       <CardContent>
         <Form {...form}>
           <form 
             className="space-y-6" 
             onSubmit={form.handleSubmit(onSubmit)}
           >
-            <div className="space-y-4">
+            <div className="space-y-4 ">
+              <div className="flex w-full items-center justify-center gap-2">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
+                  <FormItem className="">
+                    <FormLabel className="text-emerald-400">Name</FormLabel>
+                      <FormControl className="text-emerald-300">
                       <Input
                         {...field}
                         placeholder="John Doe"
                         disabled={isPending}
+                        className="placeholder:text-purple-400 border-purple-900 focus-visible:ring-emerald-600 focus-visible:border-fuchsia-600/70"
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="role"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-emerald-400">Role</FormLabel>
+                    <Select
+                      disabled={isPending}
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      
+                    >
+                      <FormControl className="text-emerald-300">
+                        <SelectTrigger className="placeholder:text-purple-400 border-purple-900 focus-visible:ring-emerald-600 focus-visible:border-fuchsia-600/70">
+                          <SelectValue className="placeholder:text-purple-400 border-purple-900 focus-visible:ring-emerald-600 focus-visible:border-fuchsia-600/70"placeholder="Select a role" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent className="placeholder:text-purple-400 border-purple-900 focus-visible:ring-emerald-600 focus-visible:border-fuchsia-600/70">
+                        <SelectItem className="text-purple-300 focus:bg-purple-500 " value={UserRole.ADMIN}>
+                          Admin
+                        </SelectItem>
+                        <SelectItem className="text-purple-300 focus:bg-purple-500 " value={UserRole.USER}>
+                          User
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              </div>
               {user?.isOAuth === false && (
                 <>
                   <FormField
@@ -112,12 +152,13 @@ const Settings = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
+                         <FormLabel className="text-emerald-400">Email</FormLabel>
+                      <FormControl className="text-emerald-300">
                           <Input
                             {...field}
                             placeholder="john.doe@example.com"
                             type="email"
+                            className="placeholder:text-purple-400 border-purple-900 focus-visible:ring-emerald-600 focus-visible:border-fuchsia-600/70"
                             disabled={isPending}
                           />
                         </FormControl>
@@ -130,12 +171,13 @@ const Settings = () => {
                     name="password"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Password</FormLabel>
-                        <FormControl>
+                         <FormLabel className="text-emerald-400">Password</FormLabel>
+                      <FormControl className="text-emerald-300">
                           <Input
                             {...field}
                             placeholder="******"
                             type="password"
+                            className="placeholder:text-purple-400 border-purple-900 focus-visible:ring-emerald-600 focus-visible:border-fuchsia-600/70"
                             disabled={isPending}
                           />
                         </FormControl>
@@ -148,12 +190,13 @@ const Settings = () => {
                     name="newPassword"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>New Password</FormLabel>
-                        <FormControl>
+                         <FormLabel className="text-emerald-400">New Password</FormLabel>
+                      <FormControl className="text-emerald-300">
                           <Input
                             {...field}
                             placeholder="******"
                             type="password"
+                            className="placeholder:text-purple-400 border-purple-900 focus-visible:ring-emerald-600 focus-visible:border-fuchsia-600/70"
                             disabled={isPending}
                           />
                         </FormControl>
@@ -163,35 +206,7 @@ const Settings = () => {
                   />
                 </>
               )}
-              <FormField
-                control={form.control}
-                name="role"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Role</FormLabel>
-                    <Select
-                      disabled={isPending}
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a role" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value={UserRole.ADMIN}>
-                          Admin
-                        </SelectItem>
-                        <SelectItem value={UserRole.USER}>
-                          User
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+             
               {user?.isOAuth === false && (
                 <FormField
                   control={form.control}
@@ -199,8 +214,8 @@ const Settings = () => {
                   render={({ field }) => (
                     <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
                       <div className="space-y-0.5">
-                        <FormLabel>Two Factor Authentication</FormLabel>
-                        <FormDescription>
+                        <FormLabel className="text-emerald-400">Two Factor Authentication</FormLabel>
+                        <FormDescription className="text-purple-400">
                           Enable two factor authentication for your account
                         </FormDescription>
                       </div>
@@ -221,6 +236,7 @@ const Settings = () => {
             <Button
               disabled={isPending}
               type="submit"
+              variant="blend"
             >
               Save
             </Button>
