@@ -4,7 +4,7 @@ interface NewVerificationPageProps {}
 
 const NewVerificationPage = () => {
   return (
-<div>
+<div className="flex items-center justify-center min-h-screen h-auto">
 <NewVerificationForm/>
 </div>
   );

@@ -4,7 +4,7 @@ interface NewPasswordPageProps {}
 
 const NewPasswordPage = () => {
   return (
-<div>
+<div className="flex items-center justify-center min-h-screen h-auto">
 <NewPasswordForm />
 </div>
   );
