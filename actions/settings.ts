@@ -84,6 +84,13 @@ export const settings = async (
       role: updatedUser.role,
     }
   });
+  
+  await db.profile.update({
+    where: { userId: updatedUser.id },
+    data: {
+    userName: updatedUser.name || "",
+    }
+  })
 
   return { success: "Settings Updated!" }
 }

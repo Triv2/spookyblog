@@ -15,7 +15,11 @@ generator client {
 model Profile {
   id            String @id @default(uuid())
   imageUrl String?
-  clerkId String
+
+
+  userId String @unique
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   userName String
 
   rank Rank?
@@ -24,7 +28,7 @@ model Profile {
   comments Comment[]
 
   articleIdsViewed String[]
-  articleIdsVoted String[]
+  commentIdsVoted String[]
 
 
   createdAt   DateTime @default(now())
@@ -33,7 +37,7 @@ model Profile {
 
 model Comment {
   id            String @id @default(uuid())
-  clerkId String
+  userId String
   profileId String
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
   articleId String
@@ -49,9 +53,8 @@ model Comment {
 
 model Author {
   id            String @id @default(uuid())
-  imageUrl String?
-  clerkId String
-  userName String
+  userId String
+
   profileId String @unique
   profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
 
@@ -139,6 +142,9 @@ model User {
   accounts      Account[]
   isTwoFactorEnabled Boolean @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
+
+  profile Profile?
+
 }
 
 model Account {

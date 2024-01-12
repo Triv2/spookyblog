@@ -3,20 +3,21 @@ import Link from "next/link";
 
 interface SocialButtonProps {
   href:string;
-  image:string;
+  
   name:string;
   className:string;
+  icon:JSX.Element;
 }
 
 const SocialButton = ({
   href,
-  image,
+  icon,
   name,
   className,
 }:SocialButtonProps) => {
   return (
 <Link href={href} className={className}>
-  <Image src={image} alt={name} width={24} height={24} />
+  {icon}
 </Link>
   );
 }

@@ -38,9 +38,9 @@ export const UserButton = () => {
     
       <Popover>
   <PopoverTrigger className="rounded-full focus:bg-purple-900 ">
-    <Avatar className="h-10 w-10 shadow-sm hover:shadow-emerald-400">
-          <AvatarImage className="opacity-90" src={user?.image || ""} />
-          <AvatarFallback className="bg-sky-500">
+    <Avatar className="h-10 w-10 shadow-md hover:shadow-purple-400">
+          <AvatarImage className="opacity-90 bg-gradient-to-t from-emerald-400/70 to-purple-900/60 p-1" src={"/headers/sgear.png" || ""} />
+          <AvatarFallback className="bg-gradient-to-t from-emerald-400/70 to-purple-900/60">
             <FaUser className="text-white" />
           </AvatarFallback>
         </Avatar>
@@ -51,7 +51,7 @@ export const UserButton = () => {
         {user && user?.name && (
         <ProfileAbout
           name={user.name}
-          imageUrl="/avatars/avaf1.png"
+          imageUrl="/headers/sgear.png"
         />)}
       </div>
 
