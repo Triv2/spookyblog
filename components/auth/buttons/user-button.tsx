@@ -45,7 +45,7 @@ export const UserButton = () => {
           </AvatarFallback>
         </Avatar>
         </PopoverTrigger>
-  <PopoverContent className="flex items-center flex-col gap-1  bg-gradient-to-tl from-emerald-600/40 to-purple-900/60 text-purple-400 bg-opacity-50 w-full"> 
+  <PopoverContent className="flex items-center flex-col gap-1 border-0 bg-gradient-to-tl from-emerald-700/60 to-purple-900/70 text-purple-400  w-full"> 
 
        <div className="pb-2">
         {user && user?.name && (

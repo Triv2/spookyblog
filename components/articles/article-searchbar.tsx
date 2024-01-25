@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Search, CheckIcon } from "lucide-react"
+import * as React from "react";
+import { Search, CheckIcon } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
-import { useRouter } from "next/navigation"
+} from "@/components/ui/popover";
+import { useRouter } from "next/navigation";
 
 const articles = [
   {
@@ -36,35 +36,34 @@ const articles = [
     value: "article2",
     label: "Article 2",
   },
-  
-]
+];
 
 export function ArticleSearchbar() {
   const router = useRouter();
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
 
-  const route = (currentValue:any) => {
-    setValue(currentValue === value ? "" : currentValue)
-    
-    if(currentValue==="cryptid corner"){
+  const route = (currentValue: any) => {
+    setValue(currentValue === value ? "" : currentValue);
+
+    if (currentValue === "cryptid corner") {
       router.push("/categories/cryptid-corner");
     }
-    if(currentValue==="cosmic mythology"){
+    if (currentValue === "cosmic mythology") {
       router.push("/categories/cosmic-mythology");
     }
-    if(currentValue=="paranormal science"){
+    if (currentValue == "paranormal science") {
       router.push("/categories/paranormal-science");
     }
-    if(currentValue==="ghost hunting"){
+    if (currentValue === "ghost hunting") {
       router.push("/categories/ghost-hunting");
     }
-    
-    if(currentValue==="/"){
+
+    if (currentValue === "/") {
       router.push("/");
     }
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -81,18 +80,23 @@ export function ArticleSearchbar() {
           <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0  border-0">
-        <Command className=" bg-gradient-to-l from-fuchsia-600/40 to-purple-900/60 flex items-center gap-2 text-fuchsia-500 bg-opacity-50">
-          <CommandInput placeholder="Search categories..." className="h-9 text-fuchsia-300" />
+      <PopoverContent className="w-[200px] p-0 border-0 border-black">
+        <Command className=" bg-gradient-to-l from-fuchsia-600/40 to-purple-900/60 flex items-center gap-2 text-fuchsia-500 ">
+          <CommandInput
+            placeholder="Search categories..."
+            className="h-9 text-fuchsia-300"
+          />
           <CommandEmpty>No category found.</CommandEmpty>
-          <CommandGroup >
+          <CommandGroup>
             {articles.map((category) => (
               <CommandItem
-                className={" truncate text-purple-400 aria-selected:bg-purple-500/40 aria-selected:text-purple-200"}
+                className={
+                  " truncate text-purple-400 aria-selected:bg-purple-500/40 aria-selected:text-purple-200"
+                }
                 key={category.value}
                 value={category.value}
-                onSelect={(currentValue:any) => {
-                  route(currentValue)
+                onSelect={(currentValue: any) => {
+                  route(currentValue);
                 }}
               >
                 {category.label}
@@ -108,5 +112,5 @@ export function ArticleSearchbar() {
         </Command>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
