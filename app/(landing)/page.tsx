@@ -5,11 +5,9 @@ import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
-import CategoryCard from "@/components/categories/category-card";
+
 import ArticleCard from "@/components/articles/article-card";
-import Particles from "@/components/effects/particles";
-import Box from "@/components/box";
-import CategoryList from "@/components/categories/category-list";
+
 import Sidebar from "./_components/sidebar";
 
 const headingFont = localFont({

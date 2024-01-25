@@ -32,12 +32,28 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
       password: hashedPassword,
     },
   });
-  
-  await db.profile.create({
+
+  const newProfile=await db.profile.create({
     data: {
       userId: newUser.id,
       userName:newUser.name || "",
     },
+    
+  })
+  await db.profile.update({
+    where:{
+      id:newProfile.id
+    },
+    data:{
+      user:{
+        connect:{
+          id:newUser.id
+        }
+      }
+    },
+    include:{
+      user:true,
+    }
   })
 
   const verificationToken = await generateVerificationToken(email);
