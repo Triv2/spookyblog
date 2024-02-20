@@ -55,6 +55,7 @@ export const ArticleSwitcher = () => {
   return (
     <div className="flex items-center justify-center flex-col  w-full ">
       <div className="flex items-center gap-1 md:flex-row flex-col p-2  w-full">
+<<<<<<< HEAD
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -106,6 +107,53 @@ export const ArticleSwitcher = () => {
         </p>
       </div>
       {value === "articles" && (
+=======
+        
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="purple"
+          role="combobox"
+          aria-expanded={open}
+          className="min-w-[200px] w-auto justify-between text-emerald-400 text-ellipsis truncate z-30 bg-gradient-to-tl from-emerald-600/40  to-purple-900/60"
+        >
+          {value
+            ? articles.find((article) => article.value === value)?.label
+            : "Article"}
+          <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[200px] p-0 border-0">
+        <Command className="bg-gradient-to-tl from-emerald-600/40  to-purple-900/60 flex items-center gap-2 text-emerald-300 bg-opacity-50 ">
+          <CommandInput placeholder="Search articles..." className="h-9 placeholder:text-emerald-300 " />
+          <CommandEmpty>No category found.</CommandEmpty>
+          <CommandGroup>
+            {articles.map((article) => (
+              <CommandItem
+                className={" truncate text-emerald-400 aria-selected:bg-emerald-700 aria-selected:text-emerald-200"}
+                key={article.value}
+                value={article.value}
+                onSelect={(currentValue:any) => {
+                  switcher(currentValue)
+                }}
+              >
+                {article.label}
+                <CheckIcon
+                  className={cn(
+                    "ml-auto h-4 w-4",
+                    value === article.value ? "opacity-100" : "opacity-0"
+                  )}
+                />
+              </CommandItem>
+            ))}
+          </CommandGroup>
+        </Command>
+      </PopoverContent>
+    </Popover>
+    <p className="text-purple-300/70 px-3 text-sm">Search or select an article.</p>
+    </div>
+    {value === "articles" && (
+>>>>>>> 7813b812c34c07e95424a5cbff51a735a70a2bb2
         <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center h-full justify-center px-5  py-3 gap-5">
           <Suspense fallback={<ArticleCard.Skeleton />}>
             <ArticleCard />
