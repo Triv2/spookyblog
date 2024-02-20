@@ -108,7 +108,7 @@ export function Searchbar() {
   }
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={setOpen} >
       <PopoverTrigger asChild>
         <Button
           variant="purple"
@@ -122,7 +122,7 @@ export function Searchbar() {
           <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0  border-0">
+      <PopoverContent className="w-[200px] p-0 bg-none border-0">
         <Command className=" bg-gradient-to-tl from-emerald-600/40 to-purple-900/60 flex items-center gap-2 text-fuchsia-500 bg-opacity-50">
           <CommandInput placeholder="Search categories..." className="h-9 text-emerald-300 placeholder:text-emerald-300" />
           <CommandEmpty className="text-emerald-300 text-sm p-4">No category found.</CommandEmpty>
