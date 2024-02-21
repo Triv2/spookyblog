@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import './globals.css'
-import { SessionProvider } from 'next-auth/react'
-import { auth } from '@/auth'
+
 import { Toaster } from '@/components/ui/sonner'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -24,9 +23,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const session = await auth();
+
   return (
-    <SessionProvider session={session}>
+
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" >
@@ -35,6 +34,6 @@ export default async function RootLayout({
         </ThemeProvider>
         </body>
     </html>
-    </SessionProvider>
+  
   )
 }
