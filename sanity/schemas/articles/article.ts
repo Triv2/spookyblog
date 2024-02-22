@@ -41,11 +41,11 @@ export default defineType({
       ]
     }),
     defineField({
-      name: 'category',
-      title: 'Category',
+      name: 'subcategory',
+      title: 'Subcategory',
       type: 'reference',
       // @ts-ignore
-      to: {type: 'Category'},
+      to: {type: 'subcategory'},
     }),
 
     defineField({

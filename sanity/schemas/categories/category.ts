@@ -11,6 +11,21 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative Text',
+        }
+      ]
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
@@ -22,13 +37,7 @@ export default defineType({
       // @ts-ignore
       of: [{type: 'reference', to: {type: 'subcategory'}}],
     }),
-    defineField({
-      name: 'article',
-      title: 'Articles',
-      type: 'array',
-      // @ts-ignore
-      of: [{type: 'reference', to: {type: 'article'}}],
-    }),
+    
 
 
     

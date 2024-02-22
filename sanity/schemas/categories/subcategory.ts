@@ -15,13 +15,20 @@ export default defineType({
       title: 'Category',
       type: 'reference',
       // @ts-ignore
-      to: {type: 'Category'},
+      to: {type: 'category'},
     }),
 
     defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
+    }),
+    defineField({
+      name: 'article',
+      title: 'Articles',
+      type: 'array',
+      // @ts-ignore
+      of: [{type: 'reference', to: {type: 'article'}}],
     }),
   ],
 })
