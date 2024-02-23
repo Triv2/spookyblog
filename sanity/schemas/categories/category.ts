@@ -17,6 +17,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      // @ts-ignore
       fields: [
         {
           name: 'alt',

@@ -23,6 +23,7 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'reference',
+      // @ts-ignore
       to: {type: 'author'},
     }),
     defineField({
@@ -32,6 +33,7 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      // @ts-ignore
       fields: [
         {
           name: 'alt',
