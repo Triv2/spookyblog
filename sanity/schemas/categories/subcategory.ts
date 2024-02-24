@@ -17,6 +17,22 @@ export default defineType({
       // @ts-ignore
       to: {type: 'category'},
     }),
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      // @ts-ignore
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative Text',
+        }
+      ]
+    }),
 
     defineField({
       name: 'description',
