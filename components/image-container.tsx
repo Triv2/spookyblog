@@ -17,8 +17,8 @@ interface ImageContainerProps {
 export default function ImageContainer({
   image,
   alt = "Cover image",
-  width = 50,
-  height = 50,
+  width,
+  height,
   size = "80vw",
   classesWrapper,
   imageClassName,

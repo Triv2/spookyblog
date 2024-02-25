@@ -6,11 +6,15 @@ import category from "@/sanity/schemas/categories/category";
 
 type categoryData = typeof category;
 
+export const revalidate= 5;
+
 const CategoryPage = async () => {
   const data = await client.fetch(
-    `*[_type == "category"]`
+    `*[_type == "category"]{title,image,description,subcategory[]->{title,description,image,article[]}}`
   );
- 
+
+
+
   return (
     <div className="flex items-center  flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg4.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full ">
       <Header
@@ -23,9 +27,9 @@ const CategoryPage = async () => {
         {data && data.map((item:categoryData, index:number) => (
           <CategoryCard key={index} 
            href={item?.title}
-            // @ts-ignore
-           image={item.image} description={item?.description}
            title={item.title}
+            // @ts-ignore
+           image={item.image} description={item?.description} subcategories={item.subcategory} articles={item.article}
           />
         ))}
       

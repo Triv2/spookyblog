@@ -1,47 +1,62 @@
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+} from "@/components/ui/accordion";
+
 import SubCategoryArticle from "./subcategory-article";
-import { Separator } from "../ui/separator";
-import Highlighter, { HighlighterItem } from "../effects/highlighter";
+import { Image as SanityImage } from "sanity";
 import { ScrollArea } from "../ui/scroll-area";
-import Image from "next/image";
 
-interface SubcategoryCardProps {}
+import ImageContainer from "../image-container";
+import article from "@/sanity/schemas/articles/article";
 
-const SubcategoryCard = () => {
+type articleData = typeof article;
+
+interface SubcategoryCardProps {
+  href?: string;
+  title?: string;
+  description?: string;
+  image: SanityImage;
+  articles?:any;
+}
+
+const SubcategoryCard = ({
+  href,
+  title,
+  description,
+  image,
+  articles,
+}: SubcategoryCardProps) => {
   return (
-  
     <Accordion className="z-20 rounded-3xl" type="single" collapsible>
-    <AccordionItem value="item-1">
-      <AccordionTrigger className="z-20 px-2 text-emerald-400/80  hover:no-underline hover:bg-slate-700/70 flex justify-around gap-5 font-bold rounded-xl">
-          <Image src="/headers/spnobg1.png" alt="subcategory" width={55} height={55} />
+      <AccordionItem value="item-1">
+        <AccordionTrigger className="z-20 px-2 text-emerald-400/80  hover:no-underline hover:bg-slate-700/70 flex justify-around gap-5 font-bold rounded-xl">
+          {image && (
+            <ImageContainer image={image} alt="cat" width={25} height={25} classesWrapper="max-h-[5rem] max-w-[5rem]" />
+          )}
           <div className="flex flex-col">
-          <p>Subcategory One</p>
-          <p className="text-purple-400/80 text-xs py-1">
-            Description of Subcategory. One maybe two sentences.
-            </p>
-            </div>
+            <p>{title}</p>
+            <p className="text-purple-400/80 text-xs py-1">{description}</p>
+          </div>
         </AccordionTrigger>
-      <AccordionContent className="flex flex-col  rounded-3xl px-1 gap-y-1" >
-        
-        <ScrollArea className="flex flex-col pl-5 gap-1 h-[250px]">
-       <SubCategoryArticle/>
-       <SubCategoryArticle/>
-       <SubCategoryArticle/>
-       <SubCategoryArticle/>
-       <SubCategoryArticle/>
-       </ScrollArea>
-      </AccordionContent>
-    </AccordionItem>
-  </Accordion>
-  
+        <AccordionContent className="flex flex-col  rounded-3xl px-1 gap-y-1">
+          <ScrollArea className="flex flex-col pl-5 gap-1 h-[250px]">
+            {articles && articles.map((item: articleData, index: number) => (
+                <SubcategoryCard key={index} 
+                  title={item.title} 
+                  description={item.description}
+                  image={item.image}
+                  author={item.author} 
+                  content={item.body}
+                />
+            ))}
+            
+          </ScrollArea>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
   );
 };
 export default SubcategoryCard;
