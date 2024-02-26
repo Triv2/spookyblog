@@ -10,7 +10,7 @@ export const revalidate= 5;
 
 const CategoryPage = async () => {
   const data = await client.fetch(
-    `*[_type == "category"]{title,image,description,subcategory[]->{title,description,image,article[]}}`
+    `*[_type == "category"]{title,image,description,subcategory[]->{title,description,image,article[]->{title,description,image,author,body}}}`
   );
 
 
@@ -23,7 +23,7 @@ const CategoryPage = async () => {
         imageUrl="/headers/spnobg2.png"
       />
 
-      <div className=" min-h-full bg-slate-900/80  w-full grid md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-2 pb-5 pt-5 md:px-5">
+      <div className=" min-h-full bg-slate-900/80  w-full grid md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-2 pb-5 pt-5 sm:px-5">
         {data && data.map((item:categoryData, index:number) => (
           <CategoryCard key={index} 
            href={item?.title}

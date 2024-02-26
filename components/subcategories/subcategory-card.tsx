@@ -29,10 +29,11 @@ const SubcategoryCard = ({
   image,
   articles,
 }: SubcategoryCardProps) => {
+ 
   return (
     <Accordion className="z-20 rounded-3xl" type="single" collapsible>
       <AccordionItem value="item-1">
-        <AccordionTrigger className="z-20 px-2 text-emerald-400/80  hover:no-underline hover:bg-slate-700/70 flex justify-around gap-5 font-bold rounded-xl">
+        <AccordionTrigger className="z-20 px-2 text-emerald-400/80  hover:no-underline hover:bg-slate-700/70  flex justify-around gap-5 font-bold rounded-xl">
           {image && (
             <ImageContainer image={image} alt="cat" width={25} height={25} classesWrapper="max-h-[5rem] max-w-[5rem]" />
           )}
@@ -44,12 +45,10 @@ const SubcategoryCard = ({
         <AccordionContent className="flex flex-col  rounded-3xl px-1 gap-y-1">
           <ScrollArea className="flex flex-col pl-5 gap-1 h-[250px]">
             {articles && articles.map((item: articleData, index: number) => (
-                <SubcategoryCard key={index} 
+                <SubCategoryArticle key={index} 
                   title={item.title} 
-                  description={item.description}
-                  image={item.image}
-                  author={item.author} 
-                  content={item.body}
+                  // @ts-ignore 
+                  description={item.description} image={item.image} author={item.author} 
                 />
             ))}
             

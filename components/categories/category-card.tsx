@@ -25,20 +25,20 @@ const CategoryCard = ({
 
 
   return (
-    <div className=" bg-slate-900 rounded-md py-4 border border-purple-900/50 space-y-4 h-auto">
-      <div className=" flex flex-col md:flex-row items-center justify-center w-full h-auto px-10  pl-10 ">
+    <div className=" bg-slate-900 rounded-md py-4 border border-purple-900/50 space-y-4 h-full w-full ">
+      <div className=" flex flex-col md:flex-row items-center justify-center w-full md:h-[12rem] py-[1rem]  px-10  pl-10 ">
         {image && (
-          <ImageContainer image={image} alt="cat" width={100} height={100} />
+          <ImageContainer image={image} alt="cat" width={500} height={500} classesWrapper="h-[10rem] w-[10rem] aspect-square" />
         )}
-        <div className="flex justify-evenly h-full flex-col   p-2">
+        <div className="flex justify-evenly h-full flex-col lg:min-h-[10rem] lg:pt-5 p-2">
           <Link
-            className="text-2xl  text-center text-emerald-400 sm:text-start font-bold flex items-center justify-center gap-1 hover:underline  z-10 "
+            className="text-2xl  text-center text-emerald-400 sm:text-start font-bold flex items-center h-full lg:h-[30%]  gap-1 hover:underline  z-10 "
             href={`/categories/${newhref}`}
           >
             {title}
           </Link>
 
-          <p className="text-md text-purple-400/80 pl-2">{description}</p>
+          <p className="text-md h-full text-purple-400/80 pl-2">{description}</p>
         </div>
       </div>
 

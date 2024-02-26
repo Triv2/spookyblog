@@ -6,12 +6,12 @@ import { useRouter } from "next/navigation";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { Image as SanityImage } from "sanity";
+import ImageContainer from "../image-container";
 
 interface SubCategoryArticleProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   author: any;
-  content: any;
   image: SanityImage;
   date: string;
 }
@@ -23,7 +23,6 @@ const SubCategoryArticle = ({
   title,
   description,
   author,
-  content,
   image,
   date,
 }:SubCategoryArticleProps) => {
@@ -54,12 +53,9 @@ const SubCategoryArticle = ({
         {title}
       </p>
       <div className="flex items-center justify-evenly gap-2 z-40 sm:px-1">
-        <Image
-          alt="article"
-          src="/headers/cmnobg1.png"
-          width={75}
-          height={75}
-        />
+      {image && (
+            <ImageContainer image={image} alt="cat" width={25} height={25} imageClassName="rounded-md" classesWrapper="max-h-[5rem] max-w-[5rem] rounded-md" />
+          )}
         <div className="flex flex-col items-center justify-start py-1 px-2 gap-1 ">
           <p className="text-purple-300/80 pl-1 text-sm line-clamp-4">
             {description}
