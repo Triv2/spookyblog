@@ -10,7 +10,7 @@ export const revalidate= 5;
 
 const CategoryPage = async () => {
   const data = await client.fetch(
-    `*[_type == "category"]{title,image,description,subcategory[]->{title,description,image,article[]->{title,description,image,author,body}}}`
+    `*[_type == "category"]{title,image,description,subcategory[]->{title,description,image,article[]->{title,description,image,author}}}`
   );
 
 

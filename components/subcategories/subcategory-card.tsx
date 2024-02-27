@@ -35,11 +35,11 @@ const SubcategoryCard = ({
       <AccordionItem value="item-1">
         <AccordionTrigger className="z-20 px-2 text-emerald-400/80  hover:no-underline hover:bg-slate-700/70  flex justify-around gap-5 font-bold rounded-xl">
           {image && (
-            <ImageContainer image={image} alt="cat" width={25} height={25} classesWrapper="max-h-[5rem] max-w-[5rem]" />
+            <ImageContainer image={image} alt="cat" width={25} height={25} classesWrapper="max-h-[5rem] max-w-[5rem] " imageClassName="rounded-md shadow-xl"/>
           )}
-          <div className="flex flex-col">
+          <div className="flex flex-col justify-start items-start">
             <p>{title}</p>
-            <p className="text-purple-400/80 text-xs py-1">{description}</p>
+            <p className="text-purple-400/80 text-start text-xs py-1">{description}</p>
           </div>
         </AccordionTrigger>
         <AccordionContent className="flex flex-col  rounded-3xl px-1 gap-y-1">

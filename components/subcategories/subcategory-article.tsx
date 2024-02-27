@@ -36,6 +36,7 @@ const SubCategoryArticle = ({
   if (!isMounted) {
     return null;
   }
+
   const onClick = () => {
     router.push("/articles/test");
   };
