@@ -26,7 +26,7 @@ const UrbanLegendPage = async () => {
     ))}
  
  <div className="flex items-center  justify-center w-full h-full ">
-  <SubcategoryTabs/>
+  <SubcategoryTabs subcategories={data[0].subcategory} />
   </div>
 
 </div>
