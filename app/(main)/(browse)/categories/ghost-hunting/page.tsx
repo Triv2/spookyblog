@@ -1,25 +1,32 @@
-import Particles from "@/components/effects/particles";
 import Header from "../_components/header";
-import { SubcategorySwitcher } from "@/components/subcategories/subcategory-switcher";
+
 import SubcategoryTabs from "@/components/subcategories/subcategory-tabs";
+import { client } from "@/sanity/lib/client";
+import category from "@/sanity/schemas/categories/category";
 
-interface GhostHuntingPageProps {}
+type categoryData = typeof category;
 
-const GhostHuntingPage = () => {
-  return (
-<div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg8.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full">
-<div className="bg-slate-900/40 min-h-screen h-auto w-full">
-<Header 
-  title="Ghost Hunting"  
-  description="The place for finding mysterious spirits, shadows, and other spiritual things"
-  imageUrl="/headers/gnobg1.png"
-  />
-  <div className="flex items-center  justify-center w-full h-full ">
-  <SubcategoryTabs/>
-  </div>
-
-</div>
-</div>
+const GhostHuntingPage = async () => {
+  const data = await client.fetch(
+    `*[_type == "category" && title == "Ghost Hunting"]{title,image,description,subcategory[]->{title,description,image,article[]->{title,description,image,author}}}`
   );
-}
+  return (
+    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg8.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full">
+      <div className="bg-slate-900/40 min-h-screen h-auto w-full">
+        {data &&
+          data.map((item: categoryData, index: number) => (
+            <Header
+              key={index}
+              title={item.title}
+              description={item.description}
+              image={item.image}
+            />
+          ))}
+        <div className="flex items-center  justify-center w-full h-full ">
+          <SubcategoryTabs />
+        </div>
+      </div>
+    </div>
+  );
+};
 export default GhostHuntingPage;
