@@ -23,26 +23,14 @@ import { Skeleton } from "../ui/skeleton";
 import Article from "@/app/(main)/(browse)/articles/[articleId]/_components/article";
 import Sidebar from "@/app/(main)/(browse)/categories/_components/sidebar";
 
-const articles = [
-  {
-    value: "articles",
-    label: "Articles",
-  },
-  {
-    value: "article1",
-    label: "Article 1",
-  },
-  {
-    value: "article2",
-    label: "Article 2",
-  },
-  {
-    value: "article3",
-    label: "Article 3",
-  },
-];
 
-export const ArticleSwitcher = () => {
+interface ArticleSwitcherProps {
+  articles: any[];
+}
+
+export const ArticleSwitcher = ({
+articles
+}:ArticleSwitcherProps) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("articles");
@@ -83,13 +71,13 @@ export const ArticleSwitcher = () => {
                     className={
                       " truncate text-emerald-400 aria-selected:bg-emerald-700 aria-selected:text-emerald-200"
                     }
-                    key={article.value}
-                    value={article.value}
+                    key={article.title}
+                    value={article.title}
                     onSelect={(currentValue: any) => {
                       switcher(currentValue);
                     }}
                   >
-                    {article.label}
+                    {article.title}
                     <CheckIcon
                       className={cn(
                         "ml-auto h-4 w-4",
