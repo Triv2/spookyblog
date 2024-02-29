@@ -19,9 +19,7 @@ const UrbanLegendPage = async () => {
     {data && data.map((item:categoryData, index:number) => (
       <Header 
       key={index}
-      title={item.title}   
-      description={item.description}
-      image={item.image}
+      title={item.title}    description={item.description} image={item.image}
       />
     ))}
  

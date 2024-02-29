@@ -1,6 +1,6 @@
 import { defineType, defineArrayMember } from "sanity";
 
-export default defineType({
+const content= {
   title: "Content",
   name: "content",
   type: "array",
@@ -8,7 +8,6 @@ export default defineType({
     defineArrayMember({
       title: "Block",
       type: "block",
-// @ts-ignore
       styles: [
         { title: "Normal", value: "normal" },
         { title: "H1", value: "h1" },
@@ -45,7 +44,6 @@ export default defineType({
     defineArrayMember({
       type: "image",
       options: { hotspot: true },
-      // @ts-ignore
       fields: [
         {
           name: "alt",
@@ -55,4 +53,6 @@ export default defineType({
       ],
     }),
   ],
-});
+};
+
+export default content;
