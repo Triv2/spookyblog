@@ -53,7 +53,7 @@ articles
               className="min-w-[200px] w-auto justify-between text-emerald-400 text-ellipsis truncate z-30 bg-gradient-to-tl from-emerald-600/40  to-purple-900/60"
             >
               {value
-                ? articles.find((article) => article.value === value)?.label
+                ? articles.find((article) => article.title === value)?.title
                 : "Article"}
               <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
@@ -94,6 +94,9 @@ articles
           Search or select an article.
         </p>
       </div>
+
+
+
       {value === "articles" && (
 
         
