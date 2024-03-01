@@ -31,4 +31,14 @@ export type SubcategoryType = {
   };
 }
 
-
+export type HeaderType = {
+  _id: string;
+  title: string;
+  order: number;
+  description: string;
+  image: {
+    alt: string;
+    image: string;
+  };
+  
+};

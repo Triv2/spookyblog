@@ -1,7 +1,6 @@
-import Image from "next/image";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
-import { Image as SanityImage } from "sanity";
+
 import ImageContainer from "@/components/image-container";
 
 interface HeaderProps {
@@ -9,7 +8,7 @@ interface HeaderProps {
   description: string;
   image: {
     alt: string;
-    image: string;
+    asset?: any;
   };
 }
 const headingFont = localFont({

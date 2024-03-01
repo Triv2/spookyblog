@@ -30,13 +30,13 @@ export async function getCategoriesHeader() {
     groq`*[_type == "category" && order == 0 ]
     {
       title,
-      image {alt, "image": asset->url},
+      image,
       description
       }`
   );
 }
 
-export async function getHeader(pageTitle: string) {
+export async function getCategory(pageTitle: string) {
   return client.fetch(
     groq`*[_type == "category" && title == pageTitle ]
     {
