@@ -7,7 +7,6 @@ import ImageContainer from "@/components/image-container";
 interface HeaderProps {
   title: string;
   description: string;
-  imageUrl: string;
   image: SanityImage;
 }
 const headingFont = localFont({
