@@ -1,10 +1,8 @@
-
 import Header from "../_components/header";
 
 import SubcategoryTabs from "@/components/subcategories/subcategory-tabs";
 import { getCategory } from "@/sanity/lib/query";
 import { CategoryType, CategoryTypeKeys } from "@/types";
-
 
 const categoryName = CategoryTypeKeys.CM;
 
