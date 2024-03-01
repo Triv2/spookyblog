@@ -36,21 +36,21 @@ export async function getCategoriesHeader() {
   );
 }
 
-export async function getCategory(pageTitle: string) {
+export async function getCategory(name: string) {
   return client.fetch(
-    groq`*[_type == "category" && title == pageTitle ]
+    groq`*[_type == "category" && title == "${name}" ]
     {
       title,
-      image {alt, "image": asset->url},
+      image,
       description,
       subcategory[]->{
         title,
         description,
-        image {alt, "image": asset->url},
+        image,
         article[]->{
           title,
           description,
-          image {alt, "image": asset->url},
+          image,
           author
           }
         }

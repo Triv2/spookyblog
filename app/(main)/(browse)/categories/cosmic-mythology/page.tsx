@@ -1,20 +1,21 @@
+
 import Header from "../_components/header";
 
 import SubcategoryTabs from "@/components/subcategories/subcategory-tabs";
-import { client } from "@/sanity/lib/client";
-import category from "@/sanity/schemas/categories/category";
+import { getCategory } from "@/sanity/lib/query";
+import { CategoryType, CategoryTypeKeys } from "@/types";
 
-type categoryData = typeof category;
+
+const categoryName = CategoryTypeKeys.CM;
 
 const CosmicMythologyPage = async () => {
-  const data = await client.fetch(
-    `*[_type == "category" && title == "Cosmic Mythology"]{title,image,description,subcategory[]->{title,description,image,article[]->{title,description,image,author}}}`
-  );
+  const categoryHeader: CategoryType[] = await getCategory(categoryName);
+
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg7.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full ">
-      <div className="bg-slate-900/40 min-h-screen flex flex-col items-center h-auto w-full">
-      {data &&
-          data.map((item: categoryData, index: number) => (
+    <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg10.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full ">
+      <div className="bg-slate-900/40 min-h-screen h-auto w-full">
+        {categoryHeader &&
+          categoryHeader.map((item, index: number) => (
             <Header
               key={index}
               title={item.title}
@@ -22,8 +23,9 @@ const CosmicMythologyPage = async () => {
               image={item.image}
             />
           ))}
+
         <div className="flex items-center  justify-center w-full h-full ">
-        <SubcategoryTabs subcategories={data[0].subcategory} />
+          <SubcategoryTabs subcategories={categoryHeader[0].subcategory} />
         </div>
       </div>
     </div>

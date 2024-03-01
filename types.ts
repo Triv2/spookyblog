@@ -42,3 +42,12 @@ export type HeaderType = {
   };
   
 };
+
+export enum CategoryTypeKeys { 
+  UL= "Urban Legends",
+  CM= "Cosmic Mythology",
+  GH= "Ghost Hunting",
+  SR= "Spirit Rumors",
+  PS= "Paranormal Science",
+  CC= "Cryptid Corner"
+}
