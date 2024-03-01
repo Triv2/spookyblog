@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { urlForImage } from "@/sanity/lib/image";
 
 interface ImageContainerProps {
-  image?: { asset?: any };
+  image: { asset?: any };
   alt?: string;
   width?: number;
   height?: number;
@@ -26,6 +26,8 @@ export default function ImageContainer({
   ...props
 }: ImageContainerProps) {
   const imageUrl = image && urlForImage(image)?.fit("crop").url();
+
+
 
   return (
     <div className={`${classesWrapper}`} data-sanity={props["data-sanity"]}>

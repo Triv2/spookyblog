@@ -7,7 +7,10 @@ import ImageContainer from "@/components/image-container";
 interface HeaderProps {
   title: string;
   description: string;
-  image: SanityImage;
+  image: {
+    alt: string;
+    image: string;
+  };
 }
 const headingFont = localFont({
   src: "../../../../../public/fonts/cevicheOne.woff2",
@@ -19,7 +22,7 @@ const Header = ({ title, description, image }: HeaderProps) => {
       {image && (
         <ImageContainer
           image={image}
-          alt="cat"
+          alt={image.alt}
           width={500}
           height={500}
           classesWrapper="h-[10rem] w-[10rem] aspect-square"

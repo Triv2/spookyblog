@@ -1,6 +1,5 @@
 import Link from "next/link";
 import SubcategoryCard from "../subcategories/subcategory-card";
-import { Image as SanityImage } from "sanity";
 import ImageContainer from "../image-container";
 import subcategory from "@/sanity/schemas/categories/subcategory";
 
@@ -11,7 +10,10 @@ interface CategoryCardProps {
   title?: string;
   description?: string;
   subcategories?: any[];
-  image: SanityImage;
+  image: {
+    alt: string;
+    asset?: any; 
+  };
 }
 
 const CategoryCard = ({
@@ -24,11 +26,12 @@ const CategoryCard = ({
   let newhref = href?.replace(/\s/g, "-").toLowerCase();
 
 
+  
   return (
     <div className=" bg-slate-900 rounded-md py-4 border border-purple-900/50 space-y-4 h-full w-full ">
       <div className=" flex flex-col md:flex-row items-center justify-center w-full md:h-[12rem] py-[1rem]  px-10  pl-10 ">
         {image && (
-          <ImageContainer image={image} alt="cat" width={500} height={500} classesWrapper="h-[10rem] w-[10rem] aspect-square" />
+          <ImageContainer image={image} alt={image.alt} width={500} height={500} classesWrapper="h-[10rem] w-[10rem] aspect-square" />
         )}
         <div className="flex justify-evenly h-full flex-col lg:min-h-[10rem] lg:pt-5 p-2">
           <Link
