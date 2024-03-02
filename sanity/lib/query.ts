@@ -57,3 +57,17 @@ export async function getCategory(name: string) {
     }`
   );
 }
+
+export async function getArticlesBySubcategory(name: string) {
+  return client.fetch(
+    groq`*[_type == "subcategory" && title == "${name}" ]
+    {
+      article[]->{
+        title,
+        description,
+        image,
+        author
+        }
+    }`
+  );
+}
