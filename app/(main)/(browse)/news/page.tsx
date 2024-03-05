@@ -1,10 +1,17 @@
+import Header from "../categories/_components/header";
 
 interface NewsPageProps {}
 
-const NewsPage = () => {
+const NewsPage = async () => {
+
+  const newsData: HeaderType[] = await getCategories();
   return (
 <div>
-NewsPage
+<Header
+  title="News"
+  description="All the spooky news"
+  image=""
+/>
 </div>
   );
 }

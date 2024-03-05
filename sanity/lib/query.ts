@@ -71,3 +71,15 @@ export async function getArticlesBySubcategory(name: string) {
     }`
   );
 }
+
+export async function getNewsArticles(){
+  return client.fetch(
+    groq`*[_type == "article" ]
+    {
+      title,
+      description,
+      image,
+      author
+    }`
+  );
+}
