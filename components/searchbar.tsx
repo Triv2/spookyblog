@@ -26,8 +26,8 @@ const categories = [
     label: "Home",
   },
   {
-    value: "articles",
-    label: "Articles",
+    value: "news",
+    label: "News",
   },
   {
     value: "categories",
@@ -98,8 +98,8 @@ export function Searchbar() {
     if(currentValue==="categories"){
       router.push("/categories");
     }
-    if(currentValue==="articles"){
-      router.push("/articles");
+    if(currentValue==="news"){
+      router.push("/news");
     }
     if(currentValue==="/"){
       router.push("/");

@@ -35,6 +35,16 @@ export async function getCategoriesHeader() {
       }`
   );
 }
+export async function getNewsHeader() {
+  return client.fetch(
+    groq`*[_type == "category" && order == 1 ]
+    {
+      title,
+      image,
+      description
+      }`
+  );
+}
 
 export async function getCategory(name: string) {
   return client.fetch(

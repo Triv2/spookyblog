@@ -1,6 +1,6 @@
-import {defineField, defineType} from 'sanity'
+import {defineField} from 'sanity'
 
-export default defineType({
+const author = ({
   name: 'author',
   title: 'Author',
   type: 'document',
@@ -31,7 +31,6 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      // @ts-ignore
       fields: [
         {
           name: 'alt',
@@ -44,7 +43,6 @@ export default defineType({
       name: 'bio',
       title: 'Bio',
       type: 'array',
-      // @ts-ignore
       of: [
         {
           title: 'Block',
@@ -57,3 +55,5 @@ export default defineType({
   ],
  
 })
+
+export default author;

@@ -24,7 +24,8 @@ const Header = ({ title, description, image }: HeaderProps) => {
           alt={image.alt}
           width={500}
           height={500}
-          classesWrapper="h-[10rem] w-[10rem] aspect-square"
+          imageClassName="rounded-md"
+          classesWrapper="h-[10rem] w-[10rem] aspect-square rounded-md"
         />
       )}
       <div className="flex justify-center  flex-col gap-2 md:w-[40%] p-2">

@@ -49,5 +49,5 @@ export enum CategoryTypeKeys {
   GH= "Ghost Hunting",
   SR= "Spirit Rumors",
   PS= "Paranormal Science",
-  CC= "Cryptid Corner"
+  CC= "Cryptid Corner",
 }

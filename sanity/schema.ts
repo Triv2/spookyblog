@@ -6,5 +6,5 @@ import subcategory from './schemas/categories/subcategory'
 import author from './schemas/users/author'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [article,content,category,subcategory,author],
+  types: [article,content,category,subcategory, author],
 }
