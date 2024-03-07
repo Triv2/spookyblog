@@ -22,6 +22,8 @@ const NewsPage = async () => {
             image={item.image}
           />
         ))}
+        <div>
+          Article List</div>
 
 </div>
   );
