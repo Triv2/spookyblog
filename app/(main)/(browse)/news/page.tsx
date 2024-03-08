@@ -1,11 +1,10 @@
-import { CategoryTypeKeys, HeaderType } from "@/types";
+import {  HeaderType } from "@/types";
 import Header from "../categories/_components/header";
 import { getNewsHeader } from "@/sanity/lib/query";
 
 export const revalidate = 5;
 
 
-interface NewsPageProps {}
 
 const NewsPage = async () => {
 
