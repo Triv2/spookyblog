@@ -93,3 +93,15 @@ export async function getNewsArticles(){
     }`
   );
 }
+
+export async function getArticle(name: string) {
+  return client.fetch(
+    groq`*[_type == "article" && title == "${name}" ]
+    {
+      title,
+      description,
+      image,
+      author
+    }`
+  );
+}

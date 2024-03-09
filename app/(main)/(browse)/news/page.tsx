@@ -5,7 +5,6 @@ import { getNewsHeader } from "@/sanity/lib/query";
 export const revalidate = 5;
 
 
-
 const NewsPage = async () => {
 
   const newsHeader: HeaderType[] = await getNewsHeader();
