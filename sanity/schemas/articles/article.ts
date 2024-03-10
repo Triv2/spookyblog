@@ -1,5 +1,6 @@
 import {defineField} from 'sanity'
 
+// need to at portable text
 const article ={
   name: 'article',
   title: 'Article',
