@@ -35,13 +35,25 @@ export async function getCategoriesHeader() {
       }`
   );
 }
-export async function getNewsHeader() {
+export async function getNewsCategory() {
   return client.fetch(
     groq`*[_type == "category" && order == 1 ]
     {
       title,
       image,
-      description
+      description,
+      subcategory[]->{
+        title,
+        description,
+        image,
+        article[]->{
+          title,
+          description,
+          image,
+          author,
+          fullContent
+          }
+        }
       }`
   );
 }
@@ -61,7 +73,8 @@ export async function getCategory(name: string) {
           title,
           description,
           image,
-          author
+          author,
+          fullContent
           }
         }
     }`
@@ -76,20 +89,22 @@ export async function getArticlesBySubcategory(name: string) {
         title,
         description,
         image,
-        author
+        author,
+        fullContent
         }
     }`
   );
 }
 
-export async function getNewsArticles(){
+export async function getArticles() {
   return client.fetch(
     groq`*[_type == "article" ]
     {
       title,
       description,
       image,
-      author
+      author,
+      fullContent
     }`
   );
 }
@@ -101,7 +116,8 @@ export async function getArticle(name: string) {
       title,
       description,
       image,
-      author
+      author,
+      fullContent
     }`
   );
 }

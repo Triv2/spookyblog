@@ -52,17 +52,23 @@ const article ={
       type: 'reference',
       to: {type: 'subcategory'},
     }),
+    {
+      name: "fullContent",
+      title: "Full Content",
+      type: "array",
+      of: [{ type: "block" }],
+    },
 
     defineField({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
     }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'content',
-    }),
+    // defineField({
+    //   name: 'body',
+    //   title: 'Body',
+    //   type: 'content',
+    // }),
   ],
 
   

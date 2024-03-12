@@ -3,6 +3,7 @@
 import category from "./sanity/schemas/categories/category";
 import subcategory from "./sanity/schemas/categories/subcategory";
 import article from "./sanity/schemas/articles/article";
+import { PortableTextBlock } from "sanity";
 
 
 export type CategoryType = {
@@ -42,6 +43,18 @@ export type HeaderType = {
   };
   
 };
+
+export type ArticleType = {
+  _id: string;
+  title: string;
+  description: string;
+  image: {
+    alt: string;
+    image: string;
+  };
+  author: string;
+  fullContent:PortableTextBlock[];
+}
 
 export enum CategoryTypeKeys { 
   UL= "Urban Legends",
