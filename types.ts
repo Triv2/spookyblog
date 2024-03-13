@@ -11,7 +11,7 @@ export type CategoryType = {
   title: string;
   order: number;
   description: string;
-  subcategory: typeof subcategory[];
+  subcategory: SubcategoryType[];
   image: {
     alt: string;
     image: string;
@@ -23,8 +23,8 @@ export type CategoryType = {
 export type SubcategoryType = {
   _id: string;
   title: string;
-  category: typeof category;
-  article: typeof article[];
+  category: CategoryType;
+  article: ArticleType[];
   description: string;
   image: {
     alt: string;

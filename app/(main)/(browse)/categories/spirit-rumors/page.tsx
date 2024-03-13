@@ -11,6 +11,8 @@ const categoryName = CategoryTypeKeys.SR;
 const SpritRumorsPage = async () => {
   const categoryHeader: CategoryType[] = await getCategory(categoryName);
 
+
+
   return (
     <div className="flex items-center justify-center flex-col min-h-screen h-auto bg-[url(/backgrounds/spookybg10.png)] bg-no-repeat bg-cover bg-fixed bg-center w-full ">
       <div className="bg-slate-900/40 min-h-screen h-auto w-full">
