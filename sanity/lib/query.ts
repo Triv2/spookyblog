@@ -109,7 +109,7 @@ export async function getArticles() {
   );
 }
 
-export async function getArticle(name: string) {
+export async function getArticleByName(name: string) {
   return client.fetch(
     groq`*[_type == "article" && title == "${name}" ]
     {

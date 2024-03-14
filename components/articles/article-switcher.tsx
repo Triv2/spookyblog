@@ -23,27 +23,27 @@ import { Skeleton } from "../ui/skeleton";
 import Article from "@/app/(main)/(browse)/articles/[articleId]/_components/article";
 import Sidebar from "@/app/(main)/(browse)/categories/_components/sidebar";
 
-
 interface ArticleSwitcherProps {
   articles: any[];
 }
 
-export const ArticleSwitcher = ({
-articles
-}:ArticleSwitcherProps) => {
+export const ArticleSwitcher = ({ articles }: ArticleSwitcherProps) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState("articles");
+  const [value, setValue] = useState("Articles");
 
-  const switcher = (currentValue: any) => {
+  const switcher = (currentValue: string) => {
     setValue(currentValue === value ? "" : currentValue);
     setOpen(false);
   };
 
+  let articleList: string[] = [];
+
+  articles.map((item) => articleList.push(item.title));
+
   return (
     <div className="flex items-center justify-center flex-col  w-full ">
       <div className="flex items-center gap-1 md:flex-row flex-col p-2  w-full">
-
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -52,9 +52,7 @@ articles
               aria-expanded={open}
               className="min-w-[200px] w-auto justify-between text-emerald-400 text-ellipsis truncate z-30 bg-gradient-to-tl from-emerald-600/40  to-purple-900/60"
             >
-              {value
-                ? articles.find((article) => article.title === value)?.title
-                : "Article"}
+              {value}
               <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
@@ -66,22 +64,40 @@ articles
               />
               <CommandEmpty>No category found.</CommandEmpty>
               <CommandGroup>
+              <CommandItem
+                    className={
+                      " flex gap-2 truncate text-emerald-400 aria-selected:bg-emerald-700 aria-selected:text-emerald-200"
+                    }
+                    key={"Articles"}
+                    value={"Articles"}
+                    onSelect={(currentValue: string) => {
+                      switcher("Articles");
+                    }}
+                  >
+                    Articles
+                    <CheckIcon
+                      className={cn(
+                        "ml-auto h-4 w-4",
+                        value === "Articles" ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                  </CommandItem>
                 {articles.map((article) => (
                   <CommandItem
                     className={
-                      " truncate text-emerald-400 aria-selected:bg-emerald-700 aria-selected:text-emerald-200"
+                      " flex gap-2 truncate text-emerald-400 aria-selected:bg-emerald-700 aria-selected:text-emerald-200"
                     }
                     key={article.title}
                     value={article.title}
-                    onSelect={(currentValue: any) => {
-                      switcher(currentValue);
+                    onSelect={(currentValue: string) => {
+                      switcher(article.title);
                     }}
                   >
                     {article.title}
                     <CheckIcon
                       className={cn(
                         "ml-auto h-4 w-4",
-                        value === article.value ? "opacity-100" : "opacity-0"
+                        value === article.title ? "opacity-100" : "opacity-0"
                       )}
                     />
                   </CommandItem>
@@ -95,12 +111,7 @@ articles
         </p>
       </div>
 
-
-
-      {value === "articles" && (
-
-        
-    
+      {value === "Articles" && (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 items-center h-full justify-center px-5  py-3 gap-5">
           <Suspense fallback={<ArticleCard.Skeleton />}>
             <ArticleCard />
@@ -116,7 +127,7 @@ articles
         </div>
       )}
 
-      {value === "article1" && (
+      {value === articles.find((article) => article.title === value)?.title && (
         <div className=" min-h-screen w-full  p-2 md:p-10 flex  md:flex-row flex-col justify-center gap-1">
           <Suspense fallback={<ArticleCard.Skeleton />}>
             <Article />
